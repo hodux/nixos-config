@@ -168,7 +168,8 @@
     tmux
     ripgrep
     adoptopenjdk-icedtea-web
-    python314
+    python312
+    python312Packages.pip
     nodejs_24
     lua
     go
@@ -205,15 +206,13 @@
     neovim
     vscode
     jetbrains.idea
+    zed-editor
 
     # System
     hyprshot
     hyprpicker
     wl-clipboard
     thunar
-    kdePackages.kate
-    kdePackages.kolourpaint
-    kstars
     brightnessctl
     playerctl
     pavucontrol
@@ -223,6 +222,7 @@
     matugen
     glib
     gsettings-desktop-schemas
+    stow
 
     # Apps
     obsidian
@@ -230,6 +230,10 @@
     onlyoffice-desktopeditors
     obs-studio
     vlc
+    kdePackages.kate
+    kdePackages.kolourpaint
+    kstars
+    sublime
 
   ];
 
@@ -251,11 +255,7 @@
     source-code-pro
   ];
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-36.9.5"
-  ];
-
-  # NEVER CHANGE THIS
+  # don't change this
   system.stateVersion = "25.05";
 
 }
