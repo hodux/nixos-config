@@ -167,6 +167,7 @@
     git
     tmux
     ripgrep
+    fd
     adoptopenjdk-icedtea-web
     python312
     python312Packages.pip
