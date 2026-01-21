@@ -144,6 +144,7 @@
 
   # NixOS Modules
   programs.fish.enable = true;
+  documentation.man.generateCaches = false;
   programs.hyprland.enable = true;
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
@@ -162,6 +163,7 @@
   environment.systemPackages = with pkgs; [
     # Terminal Emulators
     kitty
+    ghostty
 
     # Dev + CLIs
     git
@@ -202,16 +204,19 @@
     nixd
     nixfmt
     mongosh
+    zellij
 
     # Editors
     neovim
     vscode
     jetbrains.idea
     zed-editor
+    helix
 
     # System
     hyprshot
     hyprpicker
+    hypridle
     wl-clipboard
     thunar
     brightnessctl
@@ -234,7 +239,6 @@
     kdePackages.kate
     kdePackages.kolourpaint
     kstars
-    sublime
 
   ];
 
