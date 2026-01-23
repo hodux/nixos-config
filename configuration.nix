@@ -146,6 +146,7 @@
   programs.fish.enable = true;
   documentation.man.generateCaches = false;
   programs.hyprland.enable = true;
+  programs.hyprland.xwayland.enable = true;
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
   services.displayManager.gdm.enable = true;
