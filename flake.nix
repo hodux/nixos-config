@@ -18,6 +18,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
+
   };
 
   outputs =
@@ -31,6 +33,7 @@
       nixosConfigurations = {
         icarus = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
           modules = [
             ./configuration.nix
             home-manager.nixosModules.home-manager

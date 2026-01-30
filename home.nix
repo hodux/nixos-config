@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   inputs,
   ...
@@ -63,9 +62,9 @@
     };
 
     font = {
-      name = "Sans";
-      size = 11;
+      name = "SF Pro Display 11";
     };
+
   };
 
   qt = {
@@ -73,11 +72,10 @@
     platformTheme.name = "gtk";
   };
 
-  dconf.enable = true;
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark"; # Default starting value
-    };
+  fonts.fontconfig.defaultFonts = {
+    sansSerif = [ "SF Pro Display" ];
+    serif = [ "New York" ];
+    monospace = [ "SF Mono" ];
   };
 
   # Zen as default browser

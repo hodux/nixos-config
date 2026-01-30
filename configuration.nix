@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   pkgs,
   ...
 }:
@@ -145,26 +143,28 @@
   # NixOS Modules
   programs.fish.enable = true;
   documentation.man.generateCaches = false;
-  programs.hyprland.enable = true;
-  programs.hyprland.xwayland.enable = true;
+  programs.niri.enable = true;
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
   services.displayManager.gdm.enable = true;
-  programs.dconf.enable = true;
   virtualisation.docker.enable = true;
+  services.dbus.enable = true;
 
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # Add any missing dynamic libraries for unpackaged programs
-    # here, NOT in environment.systemPackages
-  ];
+  # programs.nix-ld.libraries = with pkgs; [
+  #   # Add any missing dynamic libraries for unpackaged programs
+  #   # here, NOT in environment.systemPackages
+  # ];
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     # Terminal Emulators
     kitty
-    ghostty
 
     # Dev + CLIs
     git
@@ -175,8 +175,8 @@
     python312
     python312Packages.pip
     nodejs_24
-    lua
     go
+    lua
     kubectl
     krew
     yamllint
@@ -205,7 +205,8 @@
     nixd
     nixfmt
     mongosh
-    zellij
+    cmake
+    hugo
 
     # Editors
     neovim
@@ -226,10 +227,13 @@
     home-manager
     whitesur-icon-theme
     libinput
-    matugen
     glib
     gsettings-desktop-schemas
     stow
+    matugen
+    gnome-themes-extra
+    gtk-engine-murrine
+    xwayland-satellite
 
     # Apps
     obsidian
@@ -240,6 +244,8 @@
     kdePackages.kate
     kdePackages.kolourpaint
     kstars
+    zathura
+    qutebrowser
 
   ];
 
@@ -259,6 +265,7 @@
     nerd-fonts.jetbrains-mono
     cozette
     source-code-pro
+    helvetica-neue-lt-std
   ];
 
   # don't change this
