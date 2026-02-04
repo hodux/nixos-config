@@ -36,8 +36,8 @@
         shuffle # shuffle+ (special characters are sanitized out of extension names)
       ];
 
-      theme = spicePkgs.themes.comfy;
-      colorScheme = "Mono";
+      # theme = spicePkgs.themes.comfy;
+      # colorScheme = "Mono";
     };
 
   home.pointerCursor = {
@@ -57,12 +57,12 @@
     };
 
     theme = {
-      name = "WhiteSur-Dark";
+      name = "WhiteSur-Light";
       package = pkgs.whitesur-gtk-theme;
     };
 
     font = {
-      name = "SF Pro Display 11";
+      name = "Inter";
     };
 
   };
@@ -70,12 +70,6 @@
   qt = {
     enable = true;
     platformTheme.name = "gtk";
-  };
-
-  fonts.fontconfig.defaultFonts = {
-    sansSerif = [ "SF Pro Display" ];
-    serif = [ "New York" ];
-    monospace = [ "SF Mono" ];
   };
 
   # Zen as default browser
@@ -118,22 +112,7 @@
 
   # Packages that should be installed to the user profile.
   home.packages = [
-    pkgs.openjdk17-bootstrap
-    (pkgs.writeShellScriptBin "toggle-theme" ''
-      CURRENT_THEME=$(gsettings get org.gnome.desktop.interface gtk-theme)
-
-      if [[ "$CURRENT_THEME" == "'WhiteSur-Dark'" ]]; then
-          gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Light'
-          gsettings set org.gnome.desktop.interface color-scheme 'default'
-      else
-          gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Dark'
-          gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-      fi
-    '')
   ];
-
-  # symlink to the JDK's store path
-  home.file.".jdks/openjdk-17-eclipse".source = pkgs.openjdk17-bootstrap;
 
   # don't change this
   home.stateVersion = "25.05";

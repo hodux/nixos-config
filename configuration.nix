@@ -207,6 +207,7 @@
     mongosh
     cmake
     hugo
+    talosctl
 
     # Editors
     neovim
@@ -221,6 +222,7 @@
     hypridle
     wl-clipboard
     thunar
+    pantheon.elementary-files
     brightnessctl
     playerctl
     pavucontrol
@@ -234,10 +236,11 @@
     gnome-themes-extra
     gtk-engine-murrine
     xwayland-satellite
+    wine
 
     # Apps
     obsidian
-    discord
+    vesktop
     onlyoffice-desktopeditors
     obs-studio
     vlc
@@ -263,9 +266,7 @@
     # Extra
     font-awesome
     nerd-fonts.jetbrains-mono
-    cozette
-    source-code-pro
-    helvetica-neue-lt-std
+    inter
   ];
 
   # don't change this
