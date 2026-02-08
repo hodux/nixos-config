@@ -9,6 +9,7 @@
     inputs.spicetify-nix.homeManagerModules.default
     inputs.zen-browser.homeModules.beta
     inputs.noctalia.homeModules.default
+    ./modules/home-manager
   ];
 
   home.username = "rintaro";
@@ -40,79 +41,12 @@
       # colorScheme = "Mono";
     };
 
-  home.pointerCursor = {
-    name = "WhiteSur-cursors";
-    package = pkgs.whitesur-cursors;
-    size = 24;
-    gtk.enable = true;
-    x11.enable = true;
-  };
-
-  gtk = {
-    enable = true;
-
-    iconTheme = {
-      name = "WhiteSur";
-      package = pkgs.whitesur-icon-theme;
-    };
-
-    theme = {
-      name = "WhiteSur-Light";
-      package = pkgs.whitesur-gtk-theme;
-    };
-
-    font = {
-      name = "Inter";
-    };
-
-  };
-
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk";
-  };
-
-  # Zen as default browser
-  xdg.mimeApps =
-    let
-      value =
-        let
-          zen-browser = zen-browser.packages.nixos.beta; # or twilight
-        in
-        zen-browser.meta.desktopFileName;
-
-      associations = builtins.listToAttrs (
-        map
-          (name: {
-            inherit name value;
-          })
-          [
-            "application/x-extension-shtml"
-            "application/x-extension-xhtml"
-            "application/x-extension-html"
-            "application/x-extension-xht"
-            "application/x-extension-htm"
-            "x-scheme-handler/unknown"
-            "x-scheme-handler/mailto"
-            "x-scheme-handler/chrome"
-            "x-scheme-handler/about"
-            "x-scheme-handler/https"
-            "x-scheme-handler/http"
-            "application/xhtml+xml"
-            "application/json"
-            "text/plain"
-            "text/html"
-          ]
-      );
-    in
-    {
-      associations.added = associations;
-      defaultApplications = associations;
-    };
-
   # Packages that should be installed to the user profile.
   home.packages = [
+    pkgs.openjdk17-bootstrap
   ];
+
+  home.file.".jdks/openjdk-17-eclipse".source = pkgs.openjdk17-bootstrap;
 
   # don't change this
   home.stateVersion = "25.05";
