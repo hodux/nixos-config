@@ -3,11 +3,11 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./modules/boot.nix
-    ./modules/desktop.nix
-    ./modules/hardware.nix
-    ./modules/packages.nix
-    ./modules/system.nix
+    ./modules/nixos/boot.nix
+    ./modules/nixos/desktop.nix
+    ./modules/nixos/hardware.nix
+    ./modules/nixos/packages.nix
+    ./modules/nixos/system.nix
   ];
 
   networking.hostName = "icarus";
