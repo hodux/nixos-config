@@ -3,12 +3,20 @@
 {
   # Networking
   networking.networkmanager.enable = true;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 1701 ];
+  };
   time.timeZone = "America/Toronto";
 
   # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.gutenprint ];
+  };
 
   # User Account
+  users.groups.uinput = { };
   users.users.rintaro = {
     isNormalUser = true;
     extraGroups = [
@@ -16,6 +24,7 @@
       "docker"
       "libvirtd"
       "kvm"
+      "uinput"
     ];
     shell = pkgs.fish;
   };
@@ -36,6 +45,9 @@
   #   # here, NOT in environment.systemPackages
   # ];
   documentation.man.generateCaches = false;
+  services.udev.extraRules = ''
+    KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+  '';
 
   # Swap
   swapDevices = [

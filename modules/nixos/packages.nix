@@ -5,6 +5,25 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
   services.dbus.enable = true;
+  programs.weylus.enable = true;
+  xdg.portal = {
+    enable = true;
+
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-gtk
+    ];
+
+    config = {
+      # Configure portals for the "niri" desktop session specifically
+      niri = {
+        # Use GTK for file pickers/dialogs
+        # FORCE the 'wlr' portal for ScreenCast and Screenshot
+        "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
+        "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
+      };
+    };
+  };
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -84,6 +103,7 @@
     wine
     quickemu
     spice-gtk
+    xournalpp
 
     # Apps
     obsidian
@@ -96,6 +116,8 @@
     kstars
     zathura
     qutebrowser
+    inkscape
+    gimp
 
   ];
 }

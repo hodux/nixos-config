@@ -59,8 +59,8 @@
   };
 
   home.pointerCursor = {
-    name = "phinger-cursors-light";
-    package = pkgs.phinger-cursors;
+    name = "capitaine-cursors";
+    package = pkgs.capitaine-cursors;
     size = 32;
     gtk.enable = true;
   };
@@ -74,7 +74,7 @@
     };
 
     theme = {
-      name = "Orchis";
+      name = "Orchis-Light";
       package = pkgs.orchis-theme;
     };
 
