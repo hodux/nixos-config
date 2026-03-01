@@ -37,8 +37,6 @@
     ripgrep
     fd
     adoptopenjdk-icedtea-web
-    python312
-    python312Packages.pip
     nodejs_24
     go
     lua
@@ -74,11 +72,13 @@
     hugo
     talosctl
     opentofu
+    qalculate-qt
 
     # Editors
     neovim
     vscode
     jetbrains.idea
+    jetbrains.rider
     zed-editor
     helix
 
