@@ -83,7 +83,6 @@
     helix
 
     # System
-    hyprshot
     hyprpicker
     hypridle
     wl-clipboard
