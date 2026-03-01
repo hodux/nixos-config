@@ -34,7 +34,7 @@
     "nix-command"
     "flakes"
   ];
-  nix.settings.download-buffer-size = 67108864;
+  nix.settings.download-buffer-size = 134217728;
   nixpkgs.config.allowUnfree = true;
 
   # Core Programs
@@ -44,7 +44,7 @@
   #   # Add any missing dynamic libraries for unpackaged programs
   #   # here, NOT in environment.systemPackages
   # ];
-  documentation.man.generateCaches = false;
+  documentation.man.cache.enable = false;
   services.udev.extraRules = ''
     KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
   '';
