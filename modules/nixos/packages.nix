@@ -4,28 +4,7 @@
   virtualisation.docker.enable = true;
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
-  services.dbus.enable = true;
-  programs.weylus.enable = true;
-  xdg.portal = {
-    enable = true;
-
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
-      xdg-desktop-portal-gtk
-    ];
-
-    config = {
-      # Configure portals for the "niri" desktop session specifically
-      niri = {
-        # Use GTK for file pickers/dialogs
-        # FORCE the 'wlr' portal for ScreenCast and Screenshot
-        "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
-        "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
-      };
-    };
-  };
-
-  # List packages installed in system profile.
+  # List packagel installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     # Terminal Emulators
@@ -72,21 +51,34 @@
     hugo
     talosctl
     opentofu
-    qalculate-qt
+    tree-sitter
+    nil
+    lazygit
+    fzf
+    yazi
+    act
+    bat
+    vicinae
+    freerdp
+    kustomize
+    curl
+    wget
+    tmux-sessionizer
 
     # Editors
+    vim
     neovim
     vscode
     jetbrains.idea
     jetbrains.rider
     zed-editor
     helix
+    emacs
 
     # System
     hyprpicker
     hypridle
     wl-clipboard
-    thunar
     brightnessctl
     playerctl
     pavucontrol
@@ -101,8 +93,9 @@
     xwayland-satellite
     wine
     quickemu
-    spice-gtk
-    xournalpp
+    udiskie
+    gparted
+    libqalculate
 
     # Apps
     obsidian
@@ -117,6 +110,7 @@
     qutebrowser
     inkscape
     gimp
+    thunar
 
   ];
 }

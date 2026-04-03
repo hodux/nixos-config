@@ -1,13 +1,18 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   # Networking
   networking.networkmanager.enable = true;
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 1701 ];
-  };
   time.timeZone = "America/Toronto";
+
+  services.udisks2.enable = true;
+  # Optional: if you want it to show up specifically in /media instead of /run/media
+  services.udisks2.mountOnMedia = true;
 
   # Enable CUPS to print documents.
   services.printing = {
@@ -16,7 +21,6 @@
   };
 
   # User Account
-  users.groups.uinput = { };
   users.users.rintaro = {
     isNormalUser = true;
     extraGroups = [
@@ -24,7 +28,6 @@
       "docker"
       "libvirtd"
       "kvm"
-      "uinput"
     ];
     shell = pkgs.fish;
   };
@@ -40,14 +43,21 @@
   # Core Programs
   programs.fish.enable = true;
   programs.nix-ld.enable = true;
-  # programs.nix-ld.libraries = with pkgs; [
-  #   # Add any missing dynamic libraries for unpackaged programs
-  #   # here, NOT in environment.systemPackages
-  # ];
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+    stdenv.cc.cc.lib
+    stdenv.cc
+    zlib
+    fuse3
+    icu
+    nss
+    openssl
+    curl
+    expat
+  ];
+
   documentation.man.cache.enable = false;
-  services.udev.extraRules = ''
-    KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
-  '';
 
   # Swap
   swapDevices = [
@@ -57,4 +67,9 @@
     }
   ];
   zramSwap.enable = true;
+
+  environment.systemPackages = [
+    inputs.winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps
+    inputs.winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps-launcher # optional
+  ];
 }

@@ -1,67 +1,10 @@
 { pkgs, ... }:
 
 {
-  # fixes some of the icons for Arashi
-  xdg.desktopEntries = {
-    "org.kde.kate" = {
-      name = "Kate";
-      genericName = "Text Editor";
-      exec = "kate -b %U";
-      terminal = false;
-      categories = [
-        "Utility"
-        "TextEditor"
-      ];
-      mimeType = [ "text/plain" ];
-      icon = "org.kde.Kate";
-    };
-
-    "jetbrains-idea" = {
-      name = "IntelliJ IDEA";
-      genericName = "IDE";
-      exec = "idea %f";
-      terminal = false;
-      categories = [
-        "Development"
-        "IDE"
-      ];
-      icon = "intelij";
-    };
-
-    zen-beta = {
-      name = "Zen Browser";
-      genericName = "Web Browser";
-      exec = "zen-beta %u";
-      terminal = false;
-      categories = [
-        "Network"
-        "WebBrowser"
-      ];
-      mimeType = [
-        "text/html"
-        "text/xml"
-        "application/xhtml+xml"
-        "x-scheme-handler/http"
-        "x-scheme-handler/https"
-      ];
-      icon = "zen";
-    };
-
-    obsidian = {
-      name = "Obsidian";
-      genericName = "Knowledge Base";
-      exec = "obsidian %u";
-      terminal = false;
-      categories = [ "Office" ];
-      mimeType = [ "x-scheme-handler/obsidian" ];
-      icon = "md.obsidian.Obsidian";
-    };
-  };
-
   home.pointerCursor = {
     name = "capitaine-cursors";
     package = pkgs.capitaine-cursors;
-    size = 32;
+    size = 16;
     gtk.enable = true;
   };
 
@@ -69,13 +12,14 @@
     enable = true;
 
     iconTheme = {
-      name = "Arashi";
-      package = pkgs.arashi;
+      name = "kora";
+      package = pkgs.kora-icon-theme;
     };
 
+    gtk4.theme = null;
     theme = {
-      name = "Orchis-Light";
-      package = pkgs.orchis-theme;
+      name = "Yaru-dark";
+      package = pkgs.yaru-theme;
     };
 
     font = {

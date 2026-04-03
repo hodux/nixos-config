@@ -1,30 +1,53 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   # Display Manager
-  services.displayManager.gdm.enable = true;
+  # services.displayManager.gdm.enable = true;
 
   # https://codeberg.org/fairyglade/ly/src/branch/master/src/config/Config.zig
-  # services.displayManager.ly = {
-  #   enable = true;
-  #
-  #   settings = {
-  #     # DOOM PSX fire
-  #     animate = true;
-  #     animation = "0";
-  #
-  #     # Hide F1–F12 hints
-  #     hide_key_hints = true;
-  #     # Hide version
-  #     hide_version_string = true;
-  #
-  #     # Add a clock
-  #     bigclock = true;
-  #   };
-  # };
+  services.displayManager.ly = {
+    enable = true;
+
+    settings = {
+      # DOOM PSX fire
+      animate = true;
+      # animation = "0";
+      animation = "colormix";
+
+      # Hide F1–F12 hints
+      hide_key_hints = true;
+      # Hide version
+      hide_version_string = true;
+
+      # Add a clock
+      bigclock = true;
+      vi_mode = true;
+      battery_id = "BAT0";
+    };
+  };
+
+  # authentication agent for gparted
+  systemd.user.services.polkit-gnome-authentication-agent-1 = {
+    description = "gnome-authentication-agent-1";
+    wantedBy = [ "graphical-session.target" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      Restart = "on-failure";
+    };
+  };
 
   # Window Managers
-  programs.niri.enable = true;
+  programs.niri = {
+    enable = true;
+    package = inputs.niri-wip.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  };
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -67,5 +90,7 @@
     inter
     corefonts
     vista-fonts
+    meslo-lg
+    nerd-fonts.meslo-lg
   ];
 }
