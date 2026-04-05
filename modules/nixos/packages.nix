@@ -4,7 +4,7 @@
   virtualisation.docker.enable = true;
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
-  # List packagel installed in system profile.
+  # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     # Terminal Emulators
@@ -64,6 +64,8 @@
     curl
     wget
     tmux-sessionizer
+    jq
+    sesh
 
     # Editors
     vim

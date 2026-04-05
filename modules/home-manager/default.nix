@@ -17,6 +17,7 @@
     };
 
     gtk4.theme = null;
+    colorScheme = "light";
     theme = {
       name = "Yaru-dark";
       package = pkgs.yaru-theme;
