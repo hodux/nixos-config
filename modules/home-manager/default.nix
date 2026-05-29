@@ -12,14 +12,14 @@
     enable = true;
 
     iconTheme = {
-      name = "kora";
-      package = pkgs.kora-icon-theme;
+      name = "Colloid";
+      package = pkgs.colloid-icon-theme;
     };
 
     gtk4.theme = null;
     colorScheme = "light";
     theme = {
-      name = "Yaru-dark";
+      name = "Yaru-blue";
       package = pkgs.yaru-theme;
     };
 

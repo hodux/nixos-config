@@ -24,6 +24,8 @@
     };
   };
 
+  hardware.uinput.enable = true;
+
   # Firmware & Power
   services.fwupd.enable = true;
   services.upower.enable = true;

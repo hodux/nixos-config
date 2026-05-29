@@ -45,7 +45,6 @@
   # Window Managers
   programs.niri = {
     enable = true;
-    package = inputs.niri-wip.packages.${pkgs.stdenv.hostPlatform.system}.default;
   };
 
   programs.hyprland = {
@@ -91,6 +90,8 @@
     corefonts
     vista-fonts
     meslo-lg
+    nerd-fonts.meslo-lg
+    nerd-fonts.geist-mono
     nerd-fonts.meslo-lg
   ];
 }

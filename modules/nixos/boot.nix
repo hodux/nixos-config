@@ -17,4 +17,7 @@
     "udev.log_priority=3"
     "rd.systemd.show_status=auto"
   ];
+  boot.kernelModules = [
+    "uinput"
+  ];
 }

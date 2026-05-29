@@ -10,6 +10,12 @@
   networking.networkmanager.enable = true;
   time.timeZone = "America/Toronto";
 
+  # networking.wg-quick.interfaces = {
+  #   user07 = {
+  #     configFile = "/etc/wireguard/user07.conf";
+  #   };
+  # };
+
   services.udisks2.enable = true;
   # Optional: if you want it to show up specifically in /media instead of /run/media
   services.udisks2.mountOnMedia = true;
@@ -28,6 +34,8 @@
       "docker"
       "libvirtd"
       "kvm"
+      "uinput"
+      "input"
     ];
     shell = pkgs.fish;
   };
@@ -72,4 +80,21 @@
     inputs.winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps
     inputs.winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps-launcher # optional
   ];
+
+  services.sunshine = {
+    enable = true;
+    autoStart = false;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
+
+  services.avahi = {
+    enable = true;
+    publish = {
+      enable = true;
+      userServices = true;
+    };
+  };
+
+
 }

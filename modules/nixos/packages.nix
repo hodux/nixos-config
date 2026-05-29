@@ -4,6 +4,12 @@
   virtualisation.docker.enable = true;
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
+  programs.yazi = {
+    enable = true;
+    plugins = {
+      sshfs = pkgs.yaziPlugins.sshfs;
+    };
+  };
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
@@ -12,29 +18,35 @@
 
     # Dev + CLIs
     git
+    gh
+    lazygit
     tmux
     ripgrep
     fd
     adoptopenjdk-icedtea-web
-    nodejs_24
-    go
-    lua
     kubectl
     krew
+    nodejs_24
+    bun
+    go
+    lua
+    rustc
+    cargo
+    python3
     yamllint
     fastfetch
     cmatrix
     btop
     openssl
+    sshfs
     unzip
     gcc
     gnumake
-    rustc
-    cargo
     gvfs
     smbclient-ng
     aichat
     gemini-cli-bin
+    antigravity
     starship
     eza
     zoxide
@@ -55,7 +67,6 @@
     nil
     lazygit
     fzf
-    yazi
     act
     bat
     vicinae
@@ -63,19 +74,54 @@
     kustomize
     curl
     wget
-    tmux-sessionizer
     jq
     sesh
+    vault-bin
+    jinja2-cli
+    lmstudio
+    _7zip-zstd
+
+    # cybersec
+    netcat
+    gobuster
+    ffuf
+    nmap
+    sqlmap
+    whatweb
+    burpsuite
+    postman
+    jwt-hack
+    gtfocli
+    hashcat
+    # sage
+    cyberchef
+    steghide
+    exiftool
+    audacity
+    binwalk
+    pwntools
+    strace
+    ghidra
+    gdb
+    gef
+    tldr
+    gnuradio
+    bloodhound
+    chisel
+    responder
+    metasploit
+    thc-hydra
+    wireguard-tools
+    zsteg
+    wireshark
+    termshark
 
     # Editors
-    vim
     neovim
     vscode
+    zed-editor
     jetbrains.idea
     jetbrains.rider
-    zed-editor
-    helix
-    emacs
 
     # System
     hyprpicker
@@ -101,7 +147,7 @@
 
     # Apps
     obsidian
-    vesktop
+    discord
     onlyoffice-desktopeditors
     obs-studio
     vlc
@@ -113,6 +159,8 @@
     inkscape
     gimp
     thunar
+    motrix-next
+    waynergy
 
   ];
 }
