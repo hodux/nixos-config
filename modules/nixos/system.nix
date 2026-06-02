@@ -81,20 +81,4 @@
     inputs.winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps-launcher # optional
   ];
 
-  services.sunshine = {
-    enable = true;
-    autoStart = false;
-    capSysAdmin = true;
-    openFirewall = true;
-  };
-
-  services.avahi = {
-    enable = true;
-    publish = {
-      enable = true;
-      userServices = true;
-    };
-  };
-
-
 }

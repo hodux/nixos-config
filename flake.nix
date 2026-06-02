@@ -1,5 +1,5 @@
 {
-  description = "icarus nixos configuration";
+  description = "daedalus and icarus";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -9,9 +9,7 @@
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-    };
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
@@ -23,37 +21,54 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      ...
-    }@inputs:
+  nixConfig = {
+    extra-substituters = [ "https://cache.garnix.io" ];
+    extra-trusted-public-keys = [ "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g=" ];
+  };
+
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+    let
+      mkHomeManager = {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = { inherit inputs; };
+        home-manager.users.rintaro = ./home.nix;
+      };
+    in
     {
       nixosConfigurations = {
+        
+        # laptop
         icarus = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-            ./configuration.nix
+            ./hosts/icarus
+            ./shared-configuration.nix
             home-manager.nixosModules.home-manager
+            mkHomeManager
+          ];
+        };
+
+        # desktop
+        daedalus = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/daedalus
+            ./shared-configuration.nix
+            home-manager.nixosModules.home-manager
+            mkHomeManager
+
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-
-              # Pass arguments to ./home.nix
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-              };
-
-              home-manager.users.rintaro = ./home.nix;
-
+              nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.default ];
             }
           ];
         };
+
       };
     };
 }
