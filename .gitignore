@@ -1,1 +1,15 @@
 result
+
+# dotfiles
+themes/
+completions/
+fish_variables
+conf.d/secrets.fish
+current-theme.conf
+noctalia.kdl
+.config/hypr/noctalia/
+.config/tmux/plugins/
+.config/noctalia/daedalus/colorschemes/
+.config/noctalia/daedalus/plugins/
+.config/noctalia/icarus/colorschemes/
+.config/noctalia/icarus/plugins/

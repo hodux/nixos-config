@@ -1,15 +1,9 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   virtualisation.docker.enable = true;
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
-  programs.yazi = {
-    enable = true;
-    plugins = {
-      sshfs = pkgs.yaziPlugins.sshfs;
-    };
-  };
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
@@ -80,6 +74,8 @@
     jinja2-cli
     lmstudio
     _7zip-zstd
+    yazi
+    inputs.niri-scratchpad.packages.${pkgs.system}.default
 
     # cybersec
     netcat
@@ -161,6 +157,7 @@
     thunar
     motrix-next
     waynergy
+
 
   ];
 }

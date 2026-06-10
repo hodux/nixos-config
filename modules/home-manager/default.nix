@@ -1,74 +1,61 @@
-{ pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  home.pointerCursor = {
-    name = "capitaine-cursors";
-    package = pkgs.capitaine-cursors;
-    size = 16;
-    gtk.enable = true;
-  };
+  imports = [
+    inputs.spicetify-nix.homeManagerModules.default
+    inputs.zen-browser.homeModules.beta
+    inputs.noctalia.homeModules.default
+    ./desktop.nix
+  ];
 
-  gtk = {
+  home.username = "rintaro";
+  home.homeDirectory = "/home/rintaro";
+
+  # dotfiles
+  home.file.".config/fastfetch".source = 
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/fastfetch";
+  home.file.".config/fish".source = 
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/fish";
+  home.file.".config/kitty".source = 
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/kitty";
+  home.file.".config/niri/config.kdl".source = 
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/niri/config.kdl";
+  home.file.".config/nvim".source = 
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/nvim";
+  home.file.".config/tmux".source = 
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/tmux";
+  home.file.".config/vicinae".source = 
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/vicinae";
+
+  programs.noctalia-shell = {
     enable = true;
-
-    iconTheme = {
-      name = "Colloid";
-      package = pkgs.colloid-icon-theme;
+    settings = {
+      # configure noctalia here
     };
-
-    gtk4.theme = null;
-    colorScheme = "light";
-    theme = {
-      name = "Yaru-blue";
-      package = pkgs.yaru-theme;
-    };
-
-    font = {
-      name = "Inter";
-    };
-
+    # this may also be a string or a path to a JSON file.
   };
-
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk";
-  };
-
-  xdg.mimeApps =
+  programs.zen-browser.enable = true;
+  programs.spicetify =
     let
-      value =
-        let
-          zen-browser = zen-browser.packages.nixos.beta; # or twilight
-        in
-        zen-browser.meta.desktopFileName;
-
-      associations = builtins.listToAttrs (
-        map
-          (name: {
-            inherit name value;
-          })
-          [
-            "application/x-extension-shtml"
-            "application/x-extension-xhtml"
-            "application/x-extension-html"
-            "application/x-extension-xht"
-            "application/x-extension-htm"
-            "x-scheme-handler/unknown"
-            "x-scheme-handler/mailto"
-            "x-scheme-handler/chrome"
-            "x-scheme-handler/about"
-            "x-scheme-handler/https"
-            "x-scheme-handler/http"
-            "application/xhtml+xml"
-            "application/json"
-            "text/plain"
-            "text/html"
-          ]
-      );
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
     in
     {
-      associations.added = associations;
-      defaultApplications = associations;
+      enable = true;
+      enabledExtensions = with spicePkgs.extensions; [
+        adblock
+        hidePodcasts
+        shuffle # shuffle+ (special characters are sanitized out of extension names)
+      ];
     };
 
+  # don't change this
+  home.stateVersion = "25.05";
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 }

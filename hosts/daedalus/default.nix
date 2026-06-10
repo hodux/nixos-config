@@ -11,7 +11,12 @@
 
   # AMD GPU Kernel Modules
   boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.kernelModules = [ "btusb" ];
   services.xserver.videoDrivers = [ "amdgpu" ];
+  boot.kernelParams = [
+    "video=DP-1:3440x1440@60"
+    "video=DP-3:1920x1080@60"
+  ];
 
   # Graphics / Mesa / Vulkan Setup
   hardware.graphics = {
@@ -45,4 +50,28 @@
   };
 
   programs.gamemode.enable = true;
+
+  services.displayManager.ly = {
+    settings = {
+      # animation
+      animate = true;
+      animation = "doom";
+      # dur_file_path = "/home/rintaro/nixos-config/hosts/blackhole-smooth-240x67.dur";
+
+      # F1–F12 hints
+      hide_key_hints = true;
+      # version
+      hide_version_string = true;
+
+      # clock above login prompt
+      bigclock = true;
+      vi_mode = true;
+    };
+  };
+
+  environment.systemPackages = with pkgs; [
+    prismlauncher
+    wootility
+  ];
+
 }

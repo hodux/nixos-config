@@ -10,26 +10,8 @@
   # services.displayManager.gdm.enable = true;
 
   # https://codeberg.org/fairyglade/ly/src/branch/master/src/config/Config.zig
-  services.displayManager.ly = {
-    enable = true;
-
-    settings = {
-      # DOOM PSX fire
-      animate = true;
-      # animation = "0";
-      animation = "colormix";
-
-      # Hide F1–F12 hints
-      hide_key_hints = true;
-      # Hide version
-      hide_version_string = true;
-
-      # Add a clock
-      bigclock = true;
-      vi_mode = true;
-      battery_id = "BAT0";
-    };
-  };
+  # config in individual hosts
+  services.displayManager.ly.enable = true;
 
   # authentication agent for gparted
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
@@ -46,8 +28,6 @@
   programs.niri = {
     enable = true;
   };
-
-  services.desktopManager.plasma6.enable = true;
 
   # Audio
   services.pipewire = {
