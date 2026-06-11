@@ -24,6 +24,16 @@
     };
   };
 
+  systemd.user.services.waynergy = {
+    description = "waynergy-client";
+    wantedBy = [ "graphical-session.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.waynergy}/bin/waynergy -c 10.0.0.57 --enable-crypto --enable-tofu -b uinput";
+      Restart = "on-failure";
+      RestartSec = 5;
+    };
+};
+
   # Window Managers
   programs.niri = {
     enable = true;
