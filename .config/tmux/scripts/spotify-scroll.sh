@@ -2,7 +2,10 @@
 
 text=$(playerctl --player=spotify metadata --format '{{ artist }} - {{ title }}' 2>/dev/null)
 
-[ -z "$text" ] && exit 0
+if [ -z "$text" ]; then
+    printf "not playing"
+    exit 0
+fi
 
 width=25
 padding="     "

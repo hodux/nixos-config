@@ -195,11 +195,11 @@ return {
       explorer  = { enabled = true, replace_netrw = true },
       terminal  = {
         enabled = true,
-        win = {
-          style = "float",
-          zindex = 150, -- Forces the terminal to pop up over the Zen backdrop
-          term_normal = false,
-        }
+        -- win = {
+        --   style = "float",
+        --   zindex = 150, -- Forces the terminal to pop up over the Zen backdrop
+        --   term_normal = false,
+        -- }
       },
       words     = { enabled = true },
       scroll    = { enabled = true },
