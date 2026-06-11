@@ -60,9 +60,8 @@
         "middleClickCommand": "",
         "middleClickFollowMouse": false,
         "monitors": [
-            "DP-1"
         ],
-        "mouseWheelAction": "volume",
+        "mouseWheelAction": "none",
         "mouseWheelWrap": true,
         "outerCorners": false,
         "position": "bottom",
@@ -71,10 +70,6 @@
         "rightClickCommand": "",
         "rightClickFollowMouse": true,
         "screenOverrides": [
-            {
-                "enabled": false,
-                "name": "DP-1"
-            }
         ],
         "showCapsule": false,
         "showOnWorkspaceSwitch": false,
@@ -109,15 +104,25 @@
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
+                        "spotify-client",
                         "Vesktop"
                     ]
                 },
                 {
-                    "displayMode": "forceOpen",
+                    "displayMode": "alwaysShow",
                     "iconColor": "none",
-                    "id": "KeyboardLayout",
-                    "showIcon": true,
+                    "id": "Volume",
+                    "middleClickCommand": "pwvucontrol || pavucontrol",
                     "textColor": "none"
+                },
+                {
+                    "deviceNativePath": "__default__",
+                    "displayMode": "graphic",
+                    "hideIfIdle": false,
+                    "hideIfNotDetected": true,
+                    "id": "Battery",
+                    "showNoctaliaPerformance": false,
+                    "showPowerProfiles": false
                 },
                 {
                     "hideWhenZero": false,
@@ -128,39 +133,28 @@
                     "unreadBadgeColor": "primary"
                 },
                 {
-                    "displayMode": "alwaysShow",
+                    "displayMode": "onhover",
                     "iconColor": "none",
-                    "id": "Volume",
-                    "middleClickCommand": "pwvucontrol || pavucontrol",
+                    "id": "Bluetooth",
                     "textColor": "none"
                 },
                 {
-                    "displayMode": "onhover",
+                    "displayMode": "alwaysShow",
                     "iconColor": "none",
                     "id": "Network",
                     "textColor": "none"
                 },
                 {
                     "defaultSettings": {
-                        "byteThresholdActive": 5000,
-                        "columnSpacing": 0,
-                        "customFontBold": false,
-                        "customFontItalic": false,
-                        "fontSizeModifier": 0.75,
+                        "arrowType": "caret",
+                        "byteThresholdActive": 1024,
+                        "fontSizeModifier": 1,
+                        "forceMegabytes": false,
                         "iconSizeModifier": 1,
-                        "iconType": "caret",
-                        "layout": "vertical",
-                        "paddingLeft": 5,
-                        "paddingRight": 0,
-                        "rowSpacing": -8,
-                        "slots": [
-                            "txSpeed",
-                            "txIcon",
-                            "rxSpeed",
-                            "rxIcon"
-                        ],
-                        "useCustomColors": false,
-                        "useCustomFont": false
+                        "minWidth": 0,
+                        "showNumbers": true,
+                        "spacingInbetween": 0,
+                        "useCustomColors": false
                     },
                     "id": "plugin:network-indicator"
                 },
@@ -202,14 +196,14 @@
     },
     "colorSchemes": {
         "darkMode": true,
-        "generationMethod": "vibrant",
+        "generationMethod": "tonal-spot",
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "eDP-1",
-        "predefinedScheme": "Kanagawa",
+        "predefinedScheme": "ADW",
         "schedulingMode": "off",
         "syncGsettings": true,
-        "useWallpaperColors": true
+        "useWallpaperColors": false
     },
     "controlCenter": {
         "cards": [
@@ -317,7 +311,7 @@
         "displayMode": "exclusive",
         "dockType": "floating",
         "enabled": false,
-        "floatingRatio": 0,
+        "floatingRatio": 0.20999999999999996,
         "groupApps": true,
         "groupClickAction": "list",
         "groupContextMenuMode": "extended",
@@ -331,27 +325,31 @@
         "launcherPosition": "start",
         "launcherUseDistroLogo": false,
         "monitors": [
-            "DP-1"
         ],
         "onlySameOutput": false,
         "pinnedApps": [
-            "zen-beta",
-            "kitty",
             "org.kde.kate",
-            "code",
+            "org.kde.kstars",
+            "kitty",
+            "zen-beta",
             "dev.zed.Zed",
+            "spotify",
+            "vesktop",
+            "code",
             "com.obsproject.Studio",
             "vlc",
             "obsidian",
-            "spotify",
-            "discord"
+            "org.pwmt.zathura",
+            "virt-manager",
+            "org.inkscape.Inkscape",
+            "gimp"
         ],
         "pinnedStatic": true,
         "position": "bottom",
         "showDockIndicator": false,
         "showLauncherIcon": false,
         "sitOnFrame": false,
-        "size": 1.36
+        "size": 1.3
     },
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
@@ -359,13 +357,13 @@
         "animationDisabled": false,
         "animationSpeed": 1,
         "autoStartAuth": false,
-        "avatarImage": "/home/rintaro/Pictures/sample_829695ca5e0f5ddf6e29be5f398365506ce5ca2d.jpg",
+        "avatarImage": "/home/rintaro/.face/cacodemon.png",
         "boxRadiusRatio": 1,
         "clockFormat": "hh\\nmm",
         "clockStyle": "digital",
-        "compactLockScreen": false,
+        "compactLockScreen": true,
         "dimmerOpacity": 0.2,
-        "enableBlurBehind": false,
+        "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": false,
         "enableShadows": true,
@@ -496,7 +494,6 @@
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [
-            "DP-1"
         ],
         "normalUrgencyDuration": 8,
         "overlayLayer": true,
@@ -634,15 +631,11 @@
             },
             {
                 "enabled": true,
-                "id": "vicinae"
-            },
-            {
-                "enabled": true,
-                "id": "yazi"
-            },
-            {
-                "enabled": true,
                 "id": "niri"
+            },
+            {
+                "enabled": true,
+                "id": "vicinae"
             }
         ],
         "enableUserTheming": false
@@ -653,13 +646,13 @@
         "fontDefaultScale": 1,
         "fontFixed": "monospace",
         "fontFixedScale": 1,
-        "panelBackgroundOpacity": 0.93,
+        "panelBackgroundOpacity": 0.72,
         "panelsAttachedToBar": false,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",
         "settingsPanelSideBarCardStyle": true,
         "tooltipsEnabled": true,
-        "translucentWidgets": false
+        "translucentWidgets": true
     },
     "wallpaper": {
         "automationEnabled": false,
@@ -691,7 +684,7 @@
         "overviewEnabled": false,
         "overviewTint": 0.6,
         "panelPosition": "follow_bar",
-        "randomIntervalSec": 600,
+        "randomIntervalSec": 300,
         "setWallpaperOnAllMonitors": true,
         "showHiddenFiles": false,
         "skipStartupTransition": false,
@@ -709,7 +702,7 @@
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
-        "wallhavenQuery": "",
+        "wallhavenQuery": "serial",
         "wallhavenRatios": "",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",
