@@ -5,9 +5,12 @@
   ...
 }:
 
+let
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+in
 {
   imports = [
-    inputs.spicetify-nix.homeManagerModules.default
+    inputs.spicetify-nix.homeManagerModules.spicetify
     inputs.zen-browser.homeModules.beta
     inputs.noctalia.homeModules.default
     ./desktop.nix
@@ -39,19 +42,32 @@
     };
     # this may also be a string or a path to a JSON file.
   };
+
   programs.zen-browser.enable = true;
-  programs.spicetify =
-    let
-      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-    in
-    {
-      enable = true;
-      enabledExtensions = with spicePkgs.extensions; [
-        adblock
-        hidePodcasts
-        shuffle # shuffle+ (special characters are sanitized out of extension names)
-      ];
+  programs.spicetify = {
+    enable = true;
+    enabledExtensions = with spicePkgs.extensions; [
+      adblockify
+      hidePodcasts
+      shuffle # shuffle+ (special characters are sanitized out of extension names)
+      coverAmbience
+    ];
+    # theme = spicePkgs.themes.catppuccin;
+    # colorScheme = "mocha";
+  };
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "dev.zed.Zed.desktop";
+      "x-scheme-handler/http" = "dev.zed.Zed.desktop";
+      "x-scheme-handler/https" = "dev.zed.Zed.desktop";
+      "x-scheme-handler/about" = "dev.zed.Zed.desktop";
+      "x-scheme-handler/unknown" = "dev.zed.Zed.desktop";
+      "image/jpeg" = "org.pwnt.zathura.desktop";
+      "image/png" = "org.pwnt.zathura.desktop";
+      "inode/directory" = "thunar.desktop";
     };
+  };
 
   # don't change this
   home.stateVersion = "25.05";

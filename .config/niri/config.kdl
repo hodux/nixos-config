@@ -10,7 +10,7 @@ input {
             // You can set rules, model, layout, variant and options.
             // For more information, see xkeyboard-config(7).
             layout "us,ca"
-            options "grp:ctrl_space_toggle,compose:ralt,ctrl:nocaps"
+            options "grp:ctrl_alt_toggle,ctrl:nocaps"
 
         }
         // Enable numlock on startup, omitting this setting disables it.
@@ -574,10 +574,6 @@ binds {
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
-
-    // Powers off the monitors. To turn them back on, do any input like
-    // moving the mouse or pressing any other key.
-    Mod+Shift+P { power-off-monitors; }
 }
 
 include "./noctalia.kdl"

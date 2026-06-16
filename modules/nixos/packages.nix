@@ -143,7 +143,8 @@
 
     # Apps
     obsidian
-    discord
+    vesktop
+    spotify-player
     onlyoffice-desktopeditors
     obs-studio
     vlc
