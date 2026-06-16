@@ -658,7 +658,7 @@
         "automationEnabled": false,
         "directory": "/home/rintaro/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
-        "enabled": true,
+        "enabled": false,
         "favorites": [
             {
                 "colorScheme": "Oxocarbon",
