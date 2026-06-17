@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  system,
   ...
 }:
 
@@ -42,7 +43,6 @@ in
     };
     # this may also be a string or a path to a JSON file.
   };
-
   programs.zen-browser.enable = true;
   programs.spicetify = {
     enable = true;
@@ -55,16 +55,17 @@ in
     # theme = spicePkgs.themes.catppuccin;
     # colorScheme = "mocha";
   };
+
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "text/html" = "dev.zed.Zed.desktop";
-      "x-scheme-handler/http" = "dev.zed.Zed.desktop";
-      "x-scheme-handler/https" = "dev.zed.Zed.desktop";
-      "x-scheme-handler/about" = "dev.zed.Zed.desktop";
-      "x-scheme-handler/unknown" = "dev.zed.Zed.desktop";
-      "image/jpeg" = "org.pwnt.zathura.desktop";
-      "image/png" = "org.pwnt.zathura.desktop";
+      "text/html" = "zen-beta";
+      "x-scheme-handler/http" = "zen-beta";
+      "x-scheme-handler/https" = "zen-beta";
+      "x-scheme-handler/about" = "zen-beta";
+      "x-scheme-handler/unknown" = "zen-beta";
+      "image/jpeg" = "org.pwmt.zathura.desktop";
+      "image/png" = "org.pwmt.zathura.desktop";
       "inode/directory" = "thunar.desktop";
     };
   };

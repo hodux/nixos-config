@@ -9,9 +9,17 @@
   # Display Manager
   # services.displayManager.gdm.enable = true;
 
+  imports = [
+    inputs.sysc-greet.nixosModules.default
+  ];
+
   # https://codeberg.org/fairyglade/ly/src/branch/master/src/config/Config.zig
   # config in individual hosts
-  services.displayManager.ly.enable = true;
+  # services.displayManager.ly.enable = true;
+  services.sysc-greet = {
+    enable = true;
+    compositor = "niri";  # or "hyprland" or "sway"
+  };
 
   # authentication agent for gparted
   systemd.user.services.polkit-gnome-authentication-agent-1 = {

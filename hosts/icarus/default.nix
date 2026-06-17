@@ -8,14 +8,12 @@
   networking.hostName = "icarus";
   system.stateVersion = "25.05";
 
-  # Graphics (Intel)
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
     extraPackages = with pkgs; [ intel-media-driver ];
   };
 
-  # Bluetooth
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = false;
@@ -42,24 +40,24 @@
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
 
-  services.displayManager.ly = {
-    settings = {
-      # animation
-      animate = true;
-      animation = "colormix";
-
-      # F1–F12 hints
-      hide_key_hints = true;
-      # version
-      hide_version_string = true;
-
-      # clock above login prompt
-      bigclock = true;
-
-      vi_mode = true;
-      battery_id = "BAT0";
-    };
-  };
+  # services.displayManager.ly = {
+  #   settings = {
+  #     # animation
+  #     animate = true;
+  #     animation = "colormix";
+  #
+  #     # F1–F12 hints
+  #     hide_key_hints = true;
+  #     # version
+  #     hide_version_string = true;
+  #
+  #     # clock above login prompt
+  #     bigclock = true;
+  #
+  #     vi_mode = true;
+  #     battery_id = "BAT0";
+  #   };
+  # };
 
 
 

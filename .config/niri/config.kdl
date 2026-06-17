@@ -48,11 +48,11 @@ input {
     }
 
     // Uncomment this to make the mouse warp to the center of newly focused windows.
-    warp-mouse-to-focus
+    // warp-mouse-to-focus
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    focus-follows-mouse
+    focus-follows-mouse max-scroll-amount="0%"
 }
 
 // Find more information on the wiki:
@@ -184,7 +184,7 @@ hotkey-overlay {
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -212,10 +212,6 @@ blur {
    noise 0.02      // grain overlay (default: 0.02)
    saturation 1.5  // color saturation boost (default: 1.5)
 }
-
-// workspaces
-workspace "stash" { }
-
 
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
@@ -323,10 +319,10 @@ binds {
         spawn-sh "hyprpicker | wl-copy"; }
 
     // scratchpad
-    Mod+P { spawn "niri-scratchpad" "create" "1"; }
-    Mod+Ctrl+P { spawn "niri-scratchpad" "delete" "1"; }
-    Mod+G { spawn "niri-scratchpad" "create" "2"; }
-    Mod+Ctrl+G { spawn "niri-scratchpad" "delete" "2"; }
+    // Mod+P { spawn "niri-scratchpad" "create" "1"; }
+    // Mod+Ctrl+P { spawn "niri-scratchpad" "delete" "1"; }
+    // Mod+G { spawn "niri-scratchpad" "create" "2"; }
+    // Mod+Ctrl+G { spawn "niri-scratchpad" "delete" "2"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.

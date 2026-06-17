@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -17,9 +16,13 @@
       url = "github:winapps-org/winapps";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri-scratchpad.url = "github:argosnothing/niri-scratchpad";
-
+    # niri-scratchpad.url = "github:argosnothing/niri-scratchpad";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+
+    sysc-greet = {
+      url = "github:Nomadcxx/sysc-greet";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -29,10 +32,10 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
-      mkHomeManager = hostHomeFile: {
+      mkHomeManager = system: hostHomeFile: {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit inputs; };
+        home-manager.extraSpecialArgs = { inherit inputs system; };
         home-manager.users.rintaro = {
           imports = [
             ./modules/home-manager
@@ -43,7 +46,6 @@
     in
     {
       nixosConfigurations = {
-        
         # laptop
         icarus = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
@@ -52,7 +54,7 @@
             ./hosts/icarus
             ./configuration.nix
             home-manager.nixosModules.home-manager
-            (mkHomeManager ./hosts/icarus/home-manager)
+            (mkHomeManager "x86_64-linux" ./hosts/icarus/home-manager)
           ];
         };
 
@@ -64,14 +66,13 @@
             ./hosts/daedalus
             ./configuration.nix
             home-manager.nixosModules.home-manager
-            (mkHomeManager ./hosts/daedalus/home-manager)
+            (mkHomeManager "x86_64-linux" ./hosts/daedalus/home-manager)
 
             {
               nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.default ];
             }
           ];
         };
-
       };
     };
 }

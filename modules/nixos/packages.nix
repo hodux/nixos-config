@@ -75,7 +75,7 @@
     lmstudio
     _7zip-zstd
     yazi
-    inputs.niri-scratchpad.packages.${pkgs.system}.default
+    # inputs.niri-scratchpad.packages.${pkgs.system}.default
 
     # cybersec
     netcat
