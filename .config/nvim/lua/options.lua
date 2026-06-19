@@ -4,6 +4,7 @@ require "nvchad.options"
 
 local o = vim.o
 o.cursorlineopt ='both' -- to enable cursorline!
+vim.opt.clipboard = ""
 
 o.scrolloff = 10
 o.breakindent = true

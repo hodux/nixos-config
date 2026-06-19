@@ -31,3 +31,9 @@ map('n', '<leader>ui', function()
   vim.wo.list = not vim.wo.list
   print("invisible characters: " .. (vim.wo.list and "On" or "Off"))
 end, { desc = 'toggle invisibles' })
+
+-- clipboard shortcuts
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = "Yank to system clipboard" })
+vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line to system clipboard" })
+vim.keymap.set({"n", "v"}, "<leader>p", [["+p]], { desc = "Paste from system clipboard" })
+vim.keymap.del("n", "<leader>pt")
