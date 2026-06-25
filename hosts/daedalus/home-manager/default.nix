@@ -3,6 +3,8 @@
 {
   home.file.".config/noctalia".source = 
     config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/noctalia/daedalus";
+  home.file.".config/winapps".source = 
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/winapps";
   home.file.".config/niri/monitors.kdl".text = ''
     output "DP-1" {
         mode "3440x1440@143.975"

@@ -42,7 +42,6 @@ input {
         // natural-scroll
         accel-speed 0.45
         accel-profile "flat"
-        scroll-factor 1.5
         // scroll-method "no-scroll"
     }
 
@@ -174,7 +173,7 @@ hotkey-overlay {
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -256,7 +255,6 @@ window-rule {
 // Terminal Opacity
 window-rule {
     match app-id=r#"kitty$"#
-    open-floating false
     opacity 0.85
 }
 window-rule {
@@ -560,6 +558,10 @@ binds {
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
+
+    // Powers off the monitors. To turn them back on, do any input like
+    // moving the mouse or pressing any other key.
+    Mod+Shift+P { power-off-monitors; }
 }
 
 include "./noctalia.kdl"

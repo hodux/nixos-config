@@ -4,6 +4,9 @@
   virtualisation.docker.enable = true;
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
+  programs.wireshark.enable = true;
+  programs.wireshark.dumpcap.enable = true;
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
@@ -18,6 +21,7 @@
     ripgrep
     fd
     adoptopenjdk-icedtea-web
+    openjdk21
     kubectl
     krew
     nodejs_24
@@ -75,6 +79,8 @@
     lmstudio
     _7zip-zstd
     yazi
+    scrcpy
+    ffmpeg
     # inputs.niri-scratchpad.packages.${pkgs.system}.default
 
     # cybersec
@@ -108,8 +114,8 @@
     metasploit
     thc-hydra
     wireguard-tools
-    zsteg
     wireshark
+    zsteg
     termshark
 
     # Editors
@@ -158,7 +164,6 @@
     thunar
     motrix-next
     waynergy
-
-
+    cisco-packet-tracer_9
   ];
 }

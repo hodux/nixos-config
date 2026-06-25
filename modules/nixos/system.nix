@@ -36,6 +36,7 @@
       "kvm"
       "uinput"
       "input"
+      "wireshark"
     ];
     shell = pkgs.fish;
   };
