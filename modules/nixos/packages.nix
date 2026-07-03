@@ -164,6 +164,8 @@
     thunar
     motrix-next
     waynergy
-    cisco-packet-tracer_9
+    # cisco-packet-tracer_9
+    webcamoid
+
   ];
 }
