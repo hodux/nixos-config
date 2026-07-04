@@ -82,6 +82,10 @@
     scrcpy
     ffmpeg
     # inputs.niri-scratchpad.packages.${pkgs.system}.default
+    jdt-language-server
+    jdk21
+    gradle
+    pyright
 
     # cybersec
     netcat
@@ -166,6 +170,7 @@
     waynergy
     # cisco-packet-tracer_9
     webcamoid
+    wl-mirror
 
   ];
 }
