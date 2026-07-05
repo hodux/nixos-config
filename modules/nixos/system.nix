@@ -37,6 +37,7 @@
       "uinput"
       "input"
       "wireshark"
+      "i2c"
     ];
     shell = pkgs.fish;
   };

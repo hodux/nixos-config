@@ -89,6 +89,8 @@
     jdk21
     gradle
     pyright
+    ddcutil
+    wlopm
 
     # cybersec
     netcat
