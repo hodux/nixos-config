@@ -209,7 +209,7 @@
         "predefinedScheme": "ADW",
         "schedulingMode": "off",
         "syncGsettings": true,
-        "useWallpaperColors": false
+        "useWallpaperColors": true
     },
     "controlCenter": {
         "cards": [
@@ -253,6 +253,9 @@
                 },
                 {
                     "id": "DarkMode"
+                },
+                {
+                    "id": "WallpaperSelector"
                 }
             ],
             "right": [

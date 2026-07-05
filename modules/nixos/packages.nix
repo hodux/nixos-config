@@ -23,6 +23,7 @@
     adoptopenjdk-icedtea-web
     openjdk21
     kubectl
+    kubelogin-oidc
     krew
     nodejs_24
     bun
@@ -81,6 +82,8 @@
     yazi
     scrcpy
     ffmpeg
+    dialog
+    libnotify
     # inputs.niri-scratchpad.packages.${pkgs.system}.default
     jdt-language-server
     jdk21
@@ -125,7 +128,6 @@
     # Editors
     neovim
     vscode
-    zed-editor
     jetbrains.idea
     jetbrains.rider
 
@@ -168,9 +170,7 @@
     thunar
     motrix-next
     waynergy
-    # cisco-packet-tracer_9
-    webcamoid
     wl-mirror
-
+    xarchiver
   ];
 }

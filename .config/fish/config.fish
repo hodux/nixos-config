@@ -10,8 +10,6 @@ if status is-interactive
 
     # aliases
     alias vim nvim
-    alias v nvim
-    alias zs sesh
     # pretty ls
     alias ls='eza --icons --group-directories-first'
 

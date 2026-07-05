@@ -2,8 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    prismlauncher
-    wootility
-    # cisco-packet-tracer_9
+    webcamoid
   ];
 }

@@ -22,9 +22,256 @@
    "launcher_window": {
       "opacity": 0.8
    },
-   "layer_shell": {
-      "enable": "true",
-      "keyboard_interactivity": "exclusive",
-      "layer": "overlay"
+   "providers": {
+      "applications": {
+         "entrypoints": {
+            "ActionsServer": {
+               "enabled": false
+            },
+            "AppInstaller": {
+               "enabled": false
+            },
+            "CalculatorApp": {
+               "enabled": false
+            },
+            "Clipchamp": {
+               "enabled": false
+            },
+            "CrossDeviceSettingsHost": {
+               "enabled": false
+            },
+            "DevHome": {
+               "enabled": false
+            },
+            "DynamicDependency.DataStore": {
+               "enabled": false
+            },
+            "EXCEL": {
+               "enabled": false
+            },
+            "EdgeGameAssist": {
+               "enabled": false
+            },
+            "GameBar": {
+               "enabled": false
+            },
+            "GetHelp": {
+               "enabled": false
+            },
+            "IEDIAGCMD": {
+               "enabled": false
+            },
+            "IEXPLORE": {
+               "enabled": false
+            },
+            "Lync": {
+               "enabled": false
+            },
+            "M365Copilot": {
+               "enabled": false
+            },
+            "MSACCESS": {
+               "enabled": false
+            },
+            "MSOXMLED": {
+               "enabled": false
+            },
+            "MSPUB": {
+               "enabled": false
+            },
+            "Microsoft.Lightbox": {
+               "enabled": false
+            },
+            "Microsoft.Media.Player": {
+               "enabled": false
+            },
+            "Microsoft.Msn.News": {
+               "enabled": false
+            },
+            "Microsoft.Msn.Weather": {
+               "enabled": false
+            },
+            "MicrosoftBing": {
+               "enabled": false
+            },
+            "MicrosoftStartFeedProvider": {
+               "enabled": false
+            },
+            "NewsStub": {
+               "enabled": false
+            },
+            "Notepad": {
+               "enabled": false
+            },
+            "ONENOTE": {
+               "enabled": false
+            },
+            "OPushUtil": {
+               "enabled": false
+            },
+            "OUTLOOK": {
+               "enabled": false
+            },
+            "PAD.Console.Host": {
+               "enabled": false
+            },
+            "POWERPNT": {
+               "enabled": false
+            },
+            "PhoneExperienceHost": {
+               "enabled": false
+            },
+            "Photos": {
+               "enabled": false
+            },
+            "PilotshubApp": {
+               "enabled": false
+            },
+            "PowerShell": {
+               "enabled": false
+            },
+            "QuickAssist": {
+               "enabled": false
+            },
+            "SDXHelper": {
+               "enabled": false
+            },
+            "SKYPESERVER": {
+               "enabled": false
+            },
+            "SecHealthUI": {
+               "enabled": false
+            },
+            "SnippingTool": {
+               "enabled": false
+            },
+            "Solitaire": {
+               "enabled": false
+            },
+            "SoundRec": {
+               "enabled": false
+            },
+            "SpeechToTextOverlay64-Retail": {
+               "enabled": false
+            },
+            "StickyNotesStub": {
+               "enabled": false
+            },
+            "StoreExperienceHost": {
+               "enabled": false
+            },
+            "TCUI-App": {
+               "enabled": false
+            },
+            "TabTip": {
+               "enabled": false
+            },
+            "Time": {
+               "enabled": false
+            },
+            "Todo": {
+               "enabled": false
+            },
+            "WINWORD": {
+               "enabled": false
+            },
+            "WeatherStub": {
+               "enabled": false
+            },
+            "WebViewHost": {
+               "enabled": false
+            },
+            "WidgetService": {
+               "enabled": false
+            },
+            "Widgets": {
+               "enabled": false
+            },
+            "WinStore.App": {
+               "enabled": false
+            },
+            "WindowsCamera": {
+               "enabled": false
+            },
+            "WindowsTerminal": {
+               "enabled": false
+            },
+            "XboxIdp": {
+               "enabled": false
+            },
+            "XboxPcAppCE": {
+               "enabled": false
+            },
+            "XboxStub": {
+               "enabled": false
+            },
+            "access": {
+               "enabled": false
+            },
+            "aimgr": {
+               "enabled": false
+            },
+            "cmd": {
+               "enabled": false
+            },
+            "explorer": {
+               "enabled": false
+            },
+            "iexplorer": {
+               "enabled": false
+            },
+            "licensemanagershellext": {
+               "enabled": false
+            },
+            "ms-teams": {
+               "enabled": false
+            },
+            "msedge": {
+               "enabled": false
+            },
+            "msedge_proxy": {
+               "enabled": false
+            },
+            "msoadfsb": {
+               "enabled": false
+            },
+            "msoasb": {
+               "enabled": false
+            },
+            "mspaint": {
+               "enabled": false
+            },
+            "olk": {
+               "enabled": false
+            },
+            "onenote-o365": {
+               "enabled": false
+            },
+            "outlook-o365": {
+               "enabled": false
+            },
+            "powershell": {
+               "enabled": false
+            },
+            "powershell-ide": {
+               "enabled": false
+            },
+            "publisher-o365": {
+               "enabled": false
+            },
+            "stub": {
+               "enabled": false
+            },
+            "wab": {
+               "enabled": false
+            },
+            "wabmig": {
+               "enabled": false
+            },
+            "wmplayer": {
+               "enabled": false
+            }
+         }
+      }
    }
 }

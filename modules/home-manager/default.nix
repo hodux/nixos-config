@@ -36,7 +36,7 @@ in
   home.file.".config/vicinae".source = 
     config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/vicinae";
 
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
     settings = {
       # configure noctalia here
@@ -64,9 +64,47 @@ in
       "x-scheme-handler/https" = "zen-beta";
       "x-scheme-handler/about" = "zen-beta";
       "x-scheme-handler/unknown" = "zen-beta";
+      "application/xhtml+xml" = "zen-beta";
+
       "image/jpeg" = "org.pwmt.zathura.desktop";
       "image/png" = "org.pwmt.zathura.desktop";
+      "image/gif" = "org.pwmt.zathura.desktop";
+      "image/webp" = "org.pwmt.zathura.desktop";
+      "image/svg+xml" = "org.pwmt.zathura.desktop";
+      "image/bmp" = "org.pwmt.zathura.desktop";
+      "image/tiff" = "org.pwmt.zathura.desktop";
+
+      "application/pdf" = "org.pwmt.zathura.desktop";
+      "application/epub+zip" = "org.pwmt.zathura.desktop";
+      "application/postscript" = "org.pwmt.zathura.desktop";
+
       "inode/directory" = "thunar.desktop";
+
+      "text/plain" = "org.kde.kate.desktop";
+      "text/markdown" = "org.kde.kate.desktop";
+      "application/json" = "org.kde.kate.desktop";
+      "application/x-shellscript" = "org.kde.kate.desktop";
+      "text/x-c" = "org.kde.kate.desktop";
+      "text/x-c++" = "org.kde.kate.desktop";
+      "text/x-python" = "org.kde.kate.desktop";
+      "text/rust" = "org.kde.kate.desktop";
+      "text/xml" = "org.kde.kate.desktop";
+      "application/xml" = "org.kde.kate.desktop";
+
+      "video/mp4" = "vlc.desktop";
+      "video/x-matroska" = "vlc.desktop";
+      "video/webm" = "vlc.desktop";
+      "audio/mpeg" = "vlc.desktop";
+      "audio/flac" = "vlc.desktop";
+      "audio/x-wav" = "vlc.desktop";
+
+      "application/zip" = "xarchiver.desktop";
+      "application/x-tar" = "xarchiver.desktop";
+      "application/x-bzip2" = "xarchiver.desktop";
+      "application/x-gzip" = "xarchiver.desktop";
+      "application/x-xz" = "xarchiver.desktop";
+      "application/x-7z-compressed" = "xarchiver.desktop";
+      "application/vnd.rar" = "xarchiver.desktop";
     };
   };
 

@@ -284,7 +284,5 @@ return {
     }
   },
 
-  { 'jnz/studio98' }
-
 }
 
