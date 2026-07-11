@@ -6,25 +6,12 @@
   programs.virt-manager.enable = true;
   programs.wireshark.enable = true;
   programs.wireshark.dumpcap.enable = true;
+  programs.dconf.enable = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    # Terminal Emulators
-    kitty
-
-    # Dev + CLIs
-    git
-    gh
-    lazygit
-    tmux
-    ripgrep
-    fd
-    adoptopenjdk-icedtea-web
-    openjdk21
-    kubectl
-    kubelogin-oidc
-    krew
+    # langs (should be with nix develop)
     nodejs_24
     bun
     go
@@ -32,147 +19,123 @@
     rustc
     cargo
     python3
-    yamllint
-    fastfetch
-    cmatrix
-    btop
-    openssl
-    sshfs
-    unzip
-    gcc
-    gnumake
-    gvfs
-    smbclient-ng
-    aichat
-    gemini-cli-bin
-    antigravity
+    gradle
+    openjdk25
+    openjdk21
+
+    # lsps
+    tree-sitter
+    jdt-language-server
+    pyright
+    nixd
+    stylua
+
+    # Terminal Emulators
+    kitty
+    tmux
+    sesh
+
+    # Shell
     starship
     eza
     zoxide
     direnv
-    file
-    ansilove
-    traceroute
-    dig
-    unipicker
-    nixd
-    nixfmt
-    mongosh
-    cmake
-    hugo
-    talosctl
-    opentofu
-    tree-sitter
-    nil
-    lazygit
     fzf
-    act
     bat
-    vicinae
-    freerdp
-    kustomize
-    curl
-    wget
-    jq
-    sesh
-    vault-bin
-    jinja2-cli
-    lmstudio
-    _7zip-zstd
     yazi
-    scrcpy
-    ffmpeg
-    dialog
-    libnotify
-    # inputs.niri-scratchpad.packages.${pkgs.system}.default
-    jdt-language-server
-    jdk21
-    gradle
-    pyright
+    tldr
+    file
+    ripgrep
+    fd
+    jq
+
+    # Core
+    git
+    gh
+    act
+    gcc
+    gnumake
+    cmake
+    openssl
+
+    # System & Monitoring
+    btop
+    lsof
     ddcutil
     wlopm
-
-    # cybersec
-    netcat
-    gobuster
-    ffuf
-    nmap
-    sqlmap
-    whatweb
-    burpsuite
-    postman
-    jwt-hack
-    gtfocli
-    hashcat
-    # sage
-    cyberchef
-    steghide
-    exiftool
-    audacity
-    binwalk
-    pwntools
-    strace
-    ghidra
-    gdb
-    gef
-    tldr
-    gnuradio
-    bloodhound
-    chisel
-    responder
-    metasploit
-    thc-hydra
-    wireguard-tools
-    wireshark
-    zsteg
-    termshark
-
-    # Editors
-    neovim
-    vscode
-    jetbrains.idea
-    jetbrains.rider
-
-    # System
-    hyprpicker
-    hypridle
-    wl-clipboard
     brightnessctl
     playerctl
     pavucontrol
-    home-manager
     libinput
+    gparted
+    libqalculate
+
+    # Wayland
+    hyprpicker
+    hypridle
+    wl-clipboard
+    wl-mirror
+    xwayland-satellite
     glib
     gsettings-desktop-schemas
     gnome-themes-extra
     gtk-engine-murrine
-    stow
-    matugen
-    xwayland-satellite
-    wine
-    quickemu
+    libnotify
     udiskie
-    gparted
-    libqalculate
+    gvfs
+    stow
+
+    # Network & Storage
+    curl
+    wget
+    traceroute
+    dig
+    sshfs
+    smbclient-ng
+    p7zip
+    unzip
+    xarchiver
+
+    # Editors
+    vscode
+    neovim
+    jetbrains.idea
 
     # Apps
     obsidian
     vesktop
-    spotify-player
     onlyoffice-desktopeditors
     obs-studio
     vlc
     kdePackages.kate
-    kdePackages.kolourpaint
-    kstars
-    zathura
-    qutebrowser
-    inkscape
     gimp
     thunar
-    motrix-next
-    waynergy
-    wl-mirror
-    xarchiver
+    scrcpy
+    ffmpeg
+    wine
+    spotify
+
+    # Infra
+    kubectl
+    kubelogin-oidc
+    kustomize
+    talosctl
+    opentofu
+    vault-bin
+    hugo
+    mongosh
+    yamllint
+    jinja2-cli
+    dialog
+
+    # AI
+    lmstudio
+
+    # rice
+    fastfetch
+    cmatrix
+    ansilove
+    unipicker
+
   ];
 }

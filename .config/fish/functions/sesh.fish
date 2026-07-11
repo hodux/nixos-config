@@ -8,7 +8,7 @@ function sesh
         command sesh connect "$session"
       end
     end
-  else if contains $argv[1] list connect clone root help
+  else if contains $argv[1] list connect clone root help preview window last mkdir
     command sesh $argv
   else
     set -l match (command sesh list | grep -i $argv[1] | head -n 1)

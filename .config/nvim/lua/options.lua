@@ -21,5 +21,5 @@ o.foldcolumn = "1"
 o.foldtext = ""
 o.foldlevel = 99
 o.foldlevelstart = 99
-
+vim.opt.termguicolors = true
 

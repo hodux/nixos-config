@@ -208,15 +208,23 @@ blur {
 
 // hide the winapps marker window
 window-rule {
-    match app-id="Spotify"
-    // baba-is-float true
-    open-floating true
-}
-
-window-rule {
     match title="RemoteApp Marker Window"
     open-floating true
     open-on-workspace "ghost"
+}
+
+window-rule {
+    match is-urgent=true
+    baba-is-float true
+    
+    focus-ring {
+        active-color "#ff0000"
+        inactive-color "#ff0000"
+    }
+    tab-indicator {
+        active-color "#ff0000"
+        inactive-color "#ff0000"
+    }
 }
 
 // floating windows

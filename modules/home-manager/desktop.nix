@@ -5,8 +5,9 @@
     name = "capitaine-cursors";
     package = pkgs.capitaine-cursors;
     size = 16;
-    gtk.enable = true;
+    enable = true;
   };
+
 
   gtk = {
     enable = true;
@@ -27,7 +28,7 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
+    platformTheme.name = "gtk3";
   };
 
   dconf.settings = {

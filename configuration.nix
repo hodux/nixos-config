@@ -12,5 +12,6 @@
     ./modules/nixos/hardware.nix
     ./modules/nixos/packages.nix
     ./modules/nixos/system.nix
+    # ./modules/nixos/cybersec.nix
   ];
 }

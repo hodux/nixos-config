@@ -19,6 +19,7 @@
   services.udisks2.enable = true;
   # Optional: if you want it to show up specifically in /media instead of /run/media
   services.udisks2.mountOnMedia = true;
+  services.envfs.enable = true;
 
   # Enable CUPS to print documents.
   services.printing = {

@@ -45,13 +45,12 @@ in
   };
   programs.zen-browser.enable = true;
   programs.spicetify = {
-    enable = true;
-    enabledExtensions = with spicePkgs.extensions; [
-      adblockify
-      hidePodcasts
-      shuffle # shuffle+ (special characters are sanitized out of extension names)
-      coverAmbience
-    ];
+    enable = false;
+    # enabledExtensions = with spicePkgs.extensions; [
+    #   adblockify
+    #   hidePodcasts
+    #   shuffle # shuffle+ (special characters are sanitized out of extension names)
+    # ];
     # theme = spicePkgs.themes.catppuccin;
     # colorScheme = "mocha";
   };

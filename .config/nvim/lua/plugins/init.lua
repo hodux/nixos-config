@@ -138,7 +138,9 @@ return {
     'folke/todo-comments.nvim',
     event = 'VimEnter',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    opts = { signs = false },
+    opts = {
+      signs = false,
+    },
   },
 
   -- preview markdown files
@@ -180,6 +182,24 @@ return {
     "windwp/nvim-ts-autotag",
     event = { "BufReadPre", "BufNewFile" },
     opts = {},
+  },
+
+  -- lazy.nvim
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      focusable = false
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+      }
   },
 
   -- snacks; the best plugin
@@ -281,8 +301,16 @@ return {
       -- zen
       { "<leader>Z", function() Snacks.zen() end, desc = "Toggle Zen Mode"}
 
-    }
+    },
   },
 
+  {
+    'nvim-java/nvim-java',
+    ft = "java",
+    config = function()
+      require('java').setup()
+      vim.lsp.enable('jdtls')
+    end,
+  },
 }
 
