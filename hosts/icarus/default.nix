@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ./packages.nix
+    ./hardware.nix
   ];
 
   networking.hostName = "icarus";
@@ -29,6 +30,10 @@
       };
     };
   };
+
+  # Keyd (Keyboard remapping)
+  services.keyd.enable = true;
+  services.keyd.keyboards.default.settings.main.capslock = "overload(control, esc)";
 
   # Keyd Fix for Touchpad
   environment.etc."libinput/local-overrides.quirks".text = ''

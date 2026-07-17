@@ -45,12 +45,12 @@ in
   };
   programs.zen-browser.enable = true;
   programs.spicetify = {
-    enable = false;
-    # enabledExtensions = with spicePkgs.extensions; [
-    #   adblockify
-    #   hidePodcasts
-    #   shuffle # shuffle+ (special characters are sanitized out of extension names)
-    # ];
+    enable = true;
+    enabledExtensions = with spicePkgs.extensions; [
+      adblockify
+      hidePodcasts
+      shuffle # shuffle+ (special characters are sanitized out of extension names)
+    ];
     # theme = spicePkgs.themes.catppuccin;
     # colorScheme = "mocha";
   };
@@ -107,6 +107,15 @@ in
     };
   };
 
+  xdg.desktopEntries.trash = {
+    name = "Trash";
+    genericName = "Trash Can";
+    comment = "Open the Trash Can";
+    exec = "thunar trash:///"; 
+    icon = "user-trash";
+    terminal = false;
+    categories = [ "System" "Utility" ];
+  };
   # don't change this
   home.stateVersion = "25.05";
 

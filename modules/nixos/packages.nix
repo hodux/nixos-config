@@ -7,6 +7,11 @@
   programs.wireshark.enable = true;
   programs.wireshark.dumpcap.enable = true;
   programs.dconf.enable = true;
+  programs.thunar.enable = true;
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-volman
+    thunar-archive-plugin
+  ];
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -20,7 +25,6 @@
     cargo
     python3
     gradle
-    openjdk25
     openjdk21
 
     # lsps
@@ -69,6 +73,7 @@
     libinput
     gparted
     libqalculate
+    tldr
 
     # Wayland
     hyprpicker
@@ -82,10 +87,12 @@
     gtk-engine-murrine
     libnotify
     udiskie
-    gvfs
     stow
+    inputs.winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps
+    inputs.winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps-launcher # optional
 
     # Network & Storage
+    android-tools
     curl
     wget
     traceroute
@@ -109,11 +116,11 @@
     vlc
     kdePackages.kate
     gimp
-    thunar
     scrcpy
     ffmpeg
     wine
-    spotify
+    zathura
+    pureref
 
     # Infra
     kubectl
@@ -136,6 +143,9 @@
     cmatrix
     ansilove
     unipicker
+  ];
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-40.10.5"
   ];
 }

@@ -19,6 +19,8 @@
   services.udisks2.enable = true;
   # Optional: if you want it to show up specifically in /media instead of /run/media
   services.udisks2.mountOnMedia = true;
+
+  services.gvfs.enable = true;
   services.envfs.enable = true;
 
   # Enable CUPS to print documents.
@@ -39,6 +41,7 @@
       "input"
       "wireshark"
       "i2c"
+      "adbusers"
     ];
     shell = pkgs.fish;
   };
@@ -78,10 +81,5 @@
     }
   ];
   zramSwap.enable = true;
-
-  environment.systemPackages = [
-    inputs.winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps
-    inputs.winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps-launcher # optional
-  ];
 
 }

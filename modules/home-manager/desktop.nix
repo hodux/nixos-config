@@ -8,7 +8,6 @@
     enable = true;
   };
 
-
   gtk = {
     enable = true;
     iconTheme = {

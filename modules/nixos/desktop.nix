@@ -6,16 +6,10 @@
 }:
 
 {
-  # Display Manager
-  # services.displayManager.gdm.enable = true;
-
   imports = [
     inputs.sysc-greet.nixosModules.default
   ];
 
-  # https://codeberg.org/fairyglade/ly/src/branch/master/src/config/Config.zig
-  # config in individual hosts
-  # services.displayManager.ly.enable = true;
   services.sysc-greet = {
     enable = true;
     compositor = "niri";  # or "hyprland" or "sway"
@@ -32,15 +26,16 @@
     };
   };
 
-  systemd.user.services.waynergy = {
-    description = "waynergy-client";
-    wantedBy = [ "graphical-session.target" ];
-    serviceConfig = {
-      ExecStart = "${pkgs.waynergy}/bin/waynergy -c 10.0.0.57 --enable-crypto --enable-tofu -b uinput";
-      Restart = "on-failure";
-      RestartSec = 5;
-    };
-};
+  # waynergy systemd service
+  # systemd.user.services.waynergy = {
+  #   description = "waynergy-client";
+  #   wantedBy = [ "graphical-session.target" ];
+  #   serviceConfig = {
+  #     ExecStart = "${pkgs.waynergy}/bin/waynergy -c 10.0.0.57 --enable-crypto --enable-tofu -b uinput";
+  #     Restart = "on-failure";
+  #     RestartSec = 5;
+  #   };
+  # };
 
   # Window Managers
   programs.niri = {
@@ -65,7 +60,6 @@
       '';
     };
   };
-
 
   # Fonts
   fonts.packages = with pkgs; [
