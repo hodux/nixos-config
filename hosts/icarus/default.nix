@@ -4,7 +4,6 @@
   imports = [
     ./hardware-configuration.nix
     ./packages.nix
-    ./hardware.nix
   ];
 
   networking.hostName = "icarus";
