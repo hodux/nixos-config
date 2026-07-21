@@ -318,7 +318,7 @@ binds {
 
     // XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
     // XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
-    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "noctalial msg brightness-up"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "noctalia msg brightness-up"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn-sh "noctalia msg brightness-down"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
