@@ -2,6 +2,7 @@ result
 
 # dotfiles
 .config/kitty/themes/
+.config/nvim/lazy-lock.json
 completions/
 fish_variables
 conf.d/secrets.fish
