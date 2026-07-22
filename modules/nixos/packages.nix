@@ -25,7 +25,7 @@
     cargo
     python3
     gradle
-    openjdk21
+    jdk21
 
     # lsps
     tree-sitter

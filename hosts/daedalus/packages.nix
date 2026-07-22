@@ -16,5 +16,6 @@
     wayvr
     xrizer
     lutris
+    parsec-bin
   ];
 }

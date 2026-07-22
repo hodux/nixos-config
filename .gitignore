@@ -1,7 +1,7 @@
 result
 
 # dotfiles
-themes/
+.config/kitty/themes/
 completions/
 fish_variables
 conf.d/secrets.fish
