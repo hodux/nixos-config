@@ -8,10 +8,12 @@
   programs.wireshark.dumpcap.enable = true;
   programs.dconf.enable = true;
   programs.thunar.enable = true;
-  programs.thunar.plugins = with pkgs.xfce; [
+  programs.thunar.plugins = with pkgs; [
     thunar-volman
     thunar-archive-plugin
   ];
+  services.tumbler.enable = true;
+  programs.xfconf.enable = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
