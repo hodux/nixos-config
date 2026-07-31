@@ -12,7 +12,7 @@ M.base_30 = {
   grey_fg = "#9a9da6",
   grey_fg2 = "#838791",
   light_grey = "#6d717b",
-  
+
   -- Accent colors kept exactly the same
   red = "#ff1a67",
   baby_pink = "#ff86b7",
@@ -22,8 +22,10 @@ M.base_30 = {
   vibrant_green = "#10f766",
   blue = "#29adff",
   nord_blue = "#5c6ab2",
-  yellow = "#fff024",
-  sun = "#fff82c",
+  yellow = "#b38a00",
+  sun = "#cc7700",
+  -- yellow = "#fff024",
+  -- sun = "#fff82c",
   purple = "#a79ac0",
   dark_purple = "#998cb2",
   teal = "#0b925c",

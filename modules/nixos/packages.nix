@@ -92,6 +92,7 @@
     stow
     inputs.winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps
     inputs.winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps-launcher # optional
+    xeyes
 
     # Network & Storage
     android-tools
@@ -104,6 +105,7 @@
     p7zip
     unzip
     xarchiver
+    ngrok
 
     # Editors
     vscode
@@ -139,6 +141,8 @@
 
     # AI
     lmstudio
+    opencode
+    antigravity-cli
 
     # rice
     fastfetch
