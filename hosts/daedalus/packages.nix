@@ -19,7 +19,6 @@
     xrizer
     lutris
     parsec-bin
-    davinci-resolve
     ananicy-cpp
     ananicy-rules-cachyos
   ];

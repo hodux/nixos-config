@@ -86,12 +86,11 @@
     glib
     gsettings-desktop-schemas
     gnome-themes-extra
-    gtk-engine-murrine
     libnotify
     udiskie
     stow
-    inputs.winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps
-    inputs.winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps-launcher # optional
+    # inputs.winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps
+    # inputs.winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps-launcher # optional
     xeyes
 
     # Network & Storage
@@ -110,7 +109,7 @@
     # Editors
     vscode
     neovim
-    jetbrains.idea
+    # jetbrains.idea
 
     # Apps
     obsidian

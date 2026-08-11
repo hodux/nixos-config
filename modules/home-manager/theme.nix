@@ -17,8 +17,8 @@
     gtk4.theme = null;
     colorScheme = "light";
     theme = {
-      name = "Yaru-blue";
-      package = pkgs.yaru-theme;
+      name = "Greybird-bright";
+      package = pkgs.greybird;
     };
     font = {
       name = "Inter";
