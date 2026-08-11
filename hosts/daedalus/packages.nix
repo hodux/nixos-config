@@ -8,6 +8,8 @@
   services.lact.enable = true;
   services.wivrn.enable = true;
   services.wivrn.openFirewall = true;
+  programs.weylus.enable = true;
+  programs.weylus.openFirewall = true;
   environment.systemPackages = with pkgs; [
     prismlauncher
     wootility
@@ -17,5 +19,8 @@
     xrizer
     lutris
     parsec-bin
+    davinci-resolve
+    ananicy-cpp
+    ananicy-rules-cachyos
   ];
 }

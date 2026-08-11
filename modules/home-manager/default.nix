@@ -14,7 +14,7 @@ in
     inputs.spicetify-nix.homeManagerModules.spicetify
     inputs.zen-browser.homeModules.beta
     inputs.noctalia.homeModules.default
-    ./desktop.nix
+    ./theme.nix
   ];
 
   home.username = "rintaro";
@@ -22,27 +22,21 @@ in
 
   # dotfiles
   home.file.".config/fastfetch".source = 
-    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/fastfetch";
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/home/fastfetch";
   home.file.".config/fish".source = 
-    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/fish";
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/home/fish";
   home.file.".config/kitty".source = 
-    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/kitty";
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/home/kitty";
   home.file.".config/niri/config.kdl".source = 
-    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/niri/config.kdl";
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/home/niri/config.kdl";
   home.file.".config/nvim".source = 
-    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/nvim";
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/home/nvim";
   home.file.".config/tmux".source = 
-    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/tmux";
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/home/tmux";
   home.file.".config/vicinae".source = 
-    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/vicinae";
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/home/vicinae";
 
-  programs.noctalia = {
-    enable = true;
-    settings = {
-      # configure noctalia here
-    };
-    # this may also be a string or a path to a JSON file.
-  };
+  programs.noctalia.enable = true;
   programs.zen-browser.enable = true;
   programs.spicetify = {
     enable = true;

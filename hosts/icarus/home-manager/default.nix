@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./niri.nix
+    "./niri.nix"
   ];
   home.file.".config/noctalia".source = 
-    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/.config/noctalia/icarus";
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/home/noctalia/icarus";
 }

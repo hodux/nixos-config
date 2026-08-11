@@ -15,6 +15,9 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+    extraPackages = with pkgs; [
+      rocmPackages.clr.icd
+    ];
   };
   hardware.amdgpu.overdrive.enable = true;
 
@@ -23,7 +26,6 @@
     powerOnBoot = true;
   };
 
-  services.ananicy.enable = true;
   programs.gamemode.enable = true;
   hardware.wooting.enable = true;
   powerManagement.cpuFreqGovernor = "performance";

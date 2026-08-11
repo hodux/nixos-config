@@ -12,12 +12,11 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
-    winapps = {
-      url = "github:winapps-org/winapps";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # winapps = {
+    #   url = "github:winapps-org/winapps";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
-    # niri-scratchpad.url = "github:argosnothing/niri-scratchpad";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     sysc-greet = {
       url = "github:Nomadcxx/sysc-greet";

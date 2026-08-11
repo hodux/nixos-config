@@ -3,7 +3,7 @@
 `configuration.nix` is the entrypoint for the shared modules  
 `modules/` has shared configurations  
 `hosts/` has host specific configurations  
-`.config/` dotfiles managed with symlinks
+`home/` has my dotfiles
 
 ## hosts
 `icarus` laptop pc  

@@ -1,16 +1,16 @@
 result
 
 # dotfiles
-.config/kitty/themes/
-.config/nvim/lazy-lock.json
+home/kitty/themes/
+home/nvim/lazy-lock.json
 completions/
 fish_variables
 conf.d/secrets.fish
 current-theme.conf
 noctalia.kdl
-.config/hypr/noctalia/
-.config/tmux/plugins/
-.config/noctalia/daedalus/colorschemes/
-.config/noctalia/daedalus/plugins/
-.config/noctalia/icarus/colorschemes/
-.config/noctalia/icarus/plugins/
+home/hypr/noctalia/
+home/tmux/plugins/
+home/noctalia/daedalus/colorschemes/
+home/noctalia/daedalus/plugins/
+home/noctalia/icarus/colorschemes/
+home/noctalia/icarus/plugins/
