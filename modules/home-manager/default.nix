@@ -73,16 +73,16 @@ in
 
       "inode/directory" = "thunar.desktop";
 
-      "text/plain" = "org.kde.kate.desktop";
-      "text/markdown" = "org.kde.kate.desktop";
-      "application/json" = "org.kde.kate.desktop";
-      "application/x-shellscript" = "org.kde.kate.desktop";
-      "text/x-c" = "org.kde.kate.desktop";
-      "text/x-c++" = "org.kde.kate.desktop";
-      "text/x-python" = "org.kde.kate.desktop";
-      "text/rust" = "org.kde.kate.desktop";
-      "text/xml" = "org.kde.kate.desktop";
-      "application/xml" = "org.kde.kate.desktop";
+      "text/plain" = "org.xfce.mousepad.desktop";
+      "text/markdown" = "org.xfce.mousepad.desktop";
+      "application/json" = "org.xfce.mousepad.desktop";
+      "application/x-shellscript" = "org.xfce.mousepad.desktop";
+      "text/x-c" = "org.xfce.mousepad.desktop";
+      "text/x-c++" = "org.xfce.mousepad.desktop";
+      "text/x-python" = "org.xfce.mousepad.desktop";
+      "text/rust" = "org.xfce.mousepad.desktop";
+      "text/xml" = "org.xfce.mousepad.desktop";
+      "application/xml" = "org.xfce.mousepad.desktop";
 
       "video/mp4" = "vlc.desktop";
       "video/x-matroska" = "vlc.desktop";
@@ -91,13 +91,13 @@ in
       "audio/flac" = "vlc.desktop";
       "audio/x-wav" = "vlc.desktop";
 
-      "application/zip" = "xarchiver.desktop";
-      "application/x-tar" = "xarchiver.desktop";
-      "application/x-bzip2" = "xarchiver.desktop";
-      "application/x-gzip" = "xarchiver.desktop";
-      "application/x-xz" = "xarchiver.desktop";
-      "application/x-7z-compressed" = "xarchiver.desktop";
-      "application/vnd.rar" = "xarchiver.desktop";
+      "application/zip" = "org.gnome.FileRoller.desktop";
+      "application/x-tar" = "org.gnome.FileRoller.desktop";
+      "application/x-bzip2" = "org.gnome.FileRoller.desktop";
+      "application/x-gzip" = "org.gnome.FileRoller.desktop";
+      "application/x-xz" = "org.gnome.FileRoller.desktop";
+      "application/x-7z-compressed" = "org.gnome.FileRoller.desktop";
+      "application/vnd.rar" = "org.gnome.FileRoller.desktop";
     };
   };
 
@@ -110,6 +110,22 @@ in
     terminal = false;
     categories = [ "System" "Utility" ];
   };
+
+  # temp fix for popups' wrong positioning
+  xdg.desktopEntries."idea" = {
+    name = "IntelliJ IDEA";
+    genericName = "Java, Kotlin, Groovy and Scala IDE from JetBrains";
+    comment = "IDE for Java SE, Groovy & Scala development Powerful environment for building Google Android apps Integration with JUnit, TestNG, popular SCMs, Ant & Maven. Also known as IntelliJ.";
+    exec = "env -u WAYLAND_DISPLAY idea";
+    icon = "idea";
+    type = "Application";
+    categories = [ "Development" ];
+    settings = {
+      StartupWMClass = "jetbrains-idea";
+      Version = "1.5";
+    };
+  };
+
   # don't change this
   home.stateVersion = "25.05";
 

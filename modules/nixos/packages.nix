@@ -29,12 +29,17 @@
     gradle
     jdk21
 
-    # lsps
+    # lsps (should be with nix develop)
     tree-sitter
+    lua-language-server
+    vscode-langservers-extracted
+    gopls
     jdt-language-server
-    pyright
+    nixfmt
     nixd
     stylua
+    typescript-language-server
+    pyright
 
     # Terminal Emulators
     kitty
@@ -42,7 +47,6 @@
     sesh
 
     # Shell
-    starship
     eza
     zoxide
     direnv
@@ -75,11 +79,9 @@
     libinput
     gparted
     libqalculate
-    tldr
 
     # Wayland
     hyprpicker
-    hypridle
     wl-clipboard
     wl-mirror
     xwayland-satellite
@@ -88,10 +90,8 @@
     gnome-themes-extra
     libnotify
     udiskie
-    stow
     # inputs.winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps
     # inputs.winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps-launcher # optional
-    xeyes
 
     # Network & Storage
     android-tools
@@ -103,13 +103,16 @@
     smbclient-ng
     p7zip
     unzip
-    xarchiver
+    unrar
+    file-roller
     ngrok
 
     # Editors
-    vscode
     neovim
-    # jetbrains.idea
+    vscode
+    zed-editor
+    jetbrains.idea
+    mousepad
 
     # Apps
     obsidian
@@ -117,7 +120,6 @@
     onlyoffice-desktopeditors
     obs-studio
     vlc
-    kdePackages.kate
     gimp
     scrcpy
     ffmpeg

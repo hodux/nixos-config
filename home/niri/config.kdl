@@ -65,7 +65,7 @@ layout {
     // Set gaps around windows in logical pixels.
     gaps 8
 
-    center-focused-column "never"
+    center-focused-column "always"
     always-center-single-column
     // empty-workspace-above-first
 
@@ -144,10 +144,10 @@ layout {
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
     struts {
-        left 12
-        right 12
-        top 8
-        bottom 8
+        // left 12
+        // right 12
+        // top 8
+        // bottom 8
     }
 }
 
@@ -232,15 +232,11 @@ window-rule {
   match app-id="Microsoft Word"
   match app-id="Microsoft PowerPoint"
   match app-id="Microsoft Excel"
-  match app-id=r#"^Thunar$"#
-  match app-id=r#"^thunar$"#
-  match app-id=r#"^obsidian$"#
   open-floating true
 }
 
 // blur all windows (only visible on transparent windows)
 window-rule {
-    open-floating true
     background-effect {
         blur true
         xray false

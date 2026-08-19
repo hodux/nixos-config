@@ -21,5 +21,8 @@
     parsec-bin
     ananicy-cpp
     ananicy-rules-cachyos
+    davinci-resolve
+    vmpk
+    alsa-utils
   ];
 }

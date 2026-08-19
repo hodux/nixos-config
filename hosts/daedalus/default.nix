@@ -9,6 +9,7 @@
   networking.hostName = "daedalus";
   system.stateVersion = "25.05";
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+  boot.kernelModules = [ "snd-virmidi" ];
 
   hardware.amdgpu.initrd.enable = true;
   hardware.enableAllFirmware = true;
