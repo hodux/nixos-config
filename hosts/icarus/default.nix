@@ -3,7 +3,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./packages.nix
   ];
 
   networking.hostName = "icarus";
@@ -45,25 +44,7 @@
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
 
-  # services.displayManager.ly = {
-  #   settings = {
-  #     # animation
-  #     animate = true;
-  #     animation = "colormix";
-  #
-  #     # F1–F12 hints
-  #     hide_key_hints = true;
-  #     # version
-  #     hide_version_string = true;
-  #
-  #     # clock above login prompt
-  #     bigclock = true;
-  #
-  #     vi_mode = true;
-  #     battery_id = "BAT0";
-  #   };
-  # };
-
-
-
+  environment.systemPackages = with pkgs; [
+    webcamoid
+  ];
 }

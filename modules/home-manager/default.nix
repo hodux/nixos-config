@@ -22,19 +22,19 @@ in
 
   # dotfiles
   home.file.".config/fastfetch".source = 
-    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/home/fastfetch";
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/projects/nixos-config/home/fastfetch";
   home.file.".config/fish".source = 
-    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/home/fish";
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/projects/nixos-config/home/fish";
   home.file.".config/kitty".source = 
-    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/home/kitty";
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/projects/nixos-config/home/kitty";
   home.file.".config/niri/config.kdl".source = 
-    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/home/niri/config.kdl";
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/projects/nixos-config/home/niri/config.kdl";
   home.file.".config/nvim".source = 
-    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/home/nvim";
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/projects/nixos-config/home/nvim";
   home.file.".config/tmux".source = 
-    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/home/tmux";
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/projects/nixos-config/home/tmux";
   home.file.".config/vicinae".source = 
-    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/nixos-config/home/vicinae";
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/projects/nixos-config/home/vicinae";
 
   programs.noctalia.enable = true;
   programs.zen-browser.enable = true;

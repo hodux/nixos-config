@@ -1,4 +1,6 @@
-require "nvchad.options"
+if not vim.g.vscode then
+  require "nvchad.options"
+end
 
 -- add yours here!
 

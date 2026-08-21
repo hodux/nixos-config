@@ -3,17 +3,17 @@
 {
   home.file.".config/niri/monitors.kdl".text = ''
     output "DP-1" {
-        mode "3440x1440@143.975"
-        scale 1
-        transform "normal"
-        position x=0 y=1080
+      mode "3440x1440@143.975"
+      scale 1
+      transform "normal"
+      position x=0 y=1080
     }
 
     output "DP-3" {
-        mode "1920x1080@60"
-        scale 1
-        transform "normal"
-        position x=750 y=0
+      mode "1920x1080@60"
+      scale 1
+      transform "normal"
+      position x=750 y=0
     }
   '';
 }

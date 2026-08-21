@@ -74,10 +74,7 @@
             ./configuration.nix
             home-manager.nixosModules.home-manager
             (mkHomeManager "x86_64-linux" ./hosts/daedalus/home-manager)
-
-            {
-              nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.default ];
-            }
+            {nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.default ];}
           ];
         };
       };

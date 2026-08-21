@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
+    inputs.nixpkgs-xr.nixosModules.nixpkgs-xr
     ./hardware-configuration.nix
-    ./packages.nix
   ];
 
   networking.hostName = "daedalus";
@@ -30,4 +30,27 @@
   programs.gamemode.enable = true;
   hardware.wooting.enable = true;
   powerManagement.cpuFreqGovernor = "performance";
+
+  services.lact.enable = true;
+  services.wivrn.enable = true;
+  services.wivrn.openFirewall = true;
+  programs.weylus.enable = true;
+  programs.weylus.openFirewall = true;
+  environment.systemPackages = with pkgs; [
+    prismlauncher
+    wootility
+    # cisco-packet-tracer_9
+    protonup-qt
+    wayvr
+    xrizer
+    lutris
+    parsec-bin
+    ananicy-cpp
+    ananicy-rules-cachyos
+    davinci-resolve
+    vmpk
+    alsa-utils
+    blockbench
+    packwiz
+  ];
 }

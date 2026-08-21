@@ -8,13 +8,14 @@ return {
   -- lspconfig
   {
     "neovim/nvim-lspconfig",
+    cond = not vim.g.vscode,
     config = function()
       require "configs.lspconfig"
     end,
   },
 
  -- indent guides, pairs, autocomplete and more
-  { import = "nvchad.blink.lazyspec" },
+  { import = "nvchad.blink.lazyspec", cond = not vim.g.vscode },
 
   -- telescope search
   {
@@ -58,6 +59,7 @@ return {
   {
     "NeogitOrg/neogit",
     lazy = true,
+    cond = not vim.g.vscode,
     dependencies = {
       "nvim-lua/plenary.nvim",         -- required
       "sindrets/diffview.nvim",        -- optional
@@ -80,6 +82,7 @@ return {
   {
     "folke/persistence.nvim",
     lazy = false,
+    cond = not vim.g.vscode,
     opts = {},
     config = function(_, opts)
       -- avoid saving snacks, they create empty buffers
@@ -137,6 +140,7 @@ return {
   {
     'folke/todo-comments.nvim',
     event = 'VimEnter',
+    cond = not vim.g.vscode,
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
       signs = false,
@@ -147,6 +151,7 @@ return {
   {
     'MeanderingProgrammer/render-markdown.nvim',
     ft = { "markdown" },
+    cond = not vim.g.vscode,
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
     ---@module 'render-markdown'
     ---@type render_markdown.Config
@@ -160,6 +165,7 @@ return {
     ---@type oil.SetupOpts
     dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = false,
+    cond = not vim.g.vscode,
     opts = {
       view_options = {
         show_hidden = true,
@@ -171,6 +177,7 @@ return {
   {
     "folke/trouble.nvim",
     cmd = "Trouble",
+    cond = not vim.g.vscode,
     opts = {},
     keys = {
       { "<leader>dx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
@@ -188,6 +195,7 @@ return {
   {
     "folke/noice.nvim",
     event = "VeryLazy",
+    cond = not vim.g.vscode,
     opts = {
       focusable = false
       -- add any options here
@@ -207,6 +215,7 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
+    cond = not vim.g.vscode,
     opts = {
       -- dashboard = { enabled = true },
       bigfile   = { enabled = true },

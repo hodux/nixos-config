@@ -1,4 +1,6 @@
-require "nvchad.autocmds"
+if not vim.g.vscode then
+  require "nvchad.autocmds"
+end
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd('TextYankPost', {
