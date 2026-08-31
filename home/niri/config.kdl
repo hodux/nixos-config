@@ -255,10 +255,11 @@ window-rule {
     draw-border-with-background false
 }
 
-// Terminal Opacity
+// Kitty blur + fixed size
 window-rule {
     match app-id=r#"kitty$"#
     opacity 0.85
+    default-column-width { fixed 1000; }
 }
 window-rule {
     match is-active=false app-id=r#"kitty$"#
@@ -267,6 +268,13 @@ window-rule {
 window-rule {
     match is-active=true app-id=r#"kitty$"#
     opacity 0.90
+}
+
+// Thunar + Mousepad fixed size
+window-rule {
+    match app-id="thunar"
+    match app-id="mousepad"
+    default-column-width { fixed 600; }
 }
 
 binds {

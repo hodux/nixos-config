@@ -21,7 +21,6 @@
     ];
   };
   hardware.amdgpu.overdrive.enable = true;
-
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -48,9 +47,14 @@
     ananicy-cpp
     ananicy-rules-cachyos
     davinci-resolve
-    vmpk
-    alsa-utils
     blockbench
     packwiz
+
+    pipewire.jack
+    vmpk
+    alsa-utils
+    qsynth
+    fluidsynth
+    lmms
   ];
 }

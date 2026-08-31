@@ -110,9 +110,7 @@
     # Editors
     neovim
     vscode
-    zed-editor
     jetbrains.idea
-    mousepad
 
     # Apps
     obsidian
@@ -126,6 +124,7 @@
     wine
     zathura
     pureref
+    mousepad
 
     # Infra
     kubectl

@@ -126,6 +126,35 @@ in
     };
   };
 
+  xdg.desktopEntries."spotify" = {
+    name = "Spotify";
+    genericName = "Music Player";
+    comment = "Play music using Spotify";
+    exec = "spotify --enable-features=UseOzonePlatform --ozone-platform=wayland";
+    icon = "spotify-client";
+    type = "Application";
+    categories = [ "Audio" "Music" "Player" "AudioVideo" ];
+    settings = {
+      StartupWMClass = "spotify";
+      Version = "1.5";
+    };
+  };
+  
+  xdg.desktopEntries."lmms" = {
+    name = "LMMS";
+    genericName = "Digital Audio Workstation";
+    comment = "Easy music creation for everyone";
+    exec = "${pkgs.pipewire.jack}/bin/pw-jack ${pkgs.lmms}/bin/lmms %f";
+    icon = "lmms";
+    type = "Application";
+    categories = [ "AudioVideo" "Audio" "Midi" ];
+    mimeType = [ "application/x-lmms-project" ];
+    settings = {
+      StartupWMClass = "lmms";
+      Version = "1.5";
+    };
+  };
+
   # don't change this
   home.stateVersion = "25.05";
 
