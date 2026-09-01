@@ -22,7 +22,7 @@
     nodejs_24
     bun
     go
-    lua
+    lua5_1
     rustc
     cargo
     python3
@@ -40,6 +40,9 @@
     stylua
     typescript-language-server
     pyright
+    luarocks
+    pipx
+    golangci-lint
 
     # Terminal Emulators
     kitty
@@ -56,17 +59,22 @@
     tldr
     file
     ripgrep
+    ast-grep
+    tectonic
+    ghostscript
     fd
     jq
 
     # Core
     git
+    lazygit
     gh
     act
     gcc
     gnumake
     cmake
     openssl
+    sqlite
 
     # System & Monitoring
     btop

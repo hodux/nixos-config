@@ -259,7 +259,7 @@ window-rule {
 window-rule {
     match app-id=r#"kitty$"#
     opacity 0.85
-    default-column-width { fixed 1000; }
+    default-column-width { fixed 700; }
 }
 window-rule {
     match is-active=false app-id=r#"kitty$"#

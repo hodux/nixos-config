@@ -25,16 +25,14 @@ in
     config.lib.file.mkOutOfStoreSymlink "/home/rintaro/projects/nixos-config/home/fastfetch";
   home.file.".config/fish".source = 
     config.lib.file.mkOutOfStoreSymlink "/home/rintaro/projects/nixos-config/home/fish";
-  home.file.".config/kitty".source = 
-    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/projects/nixos-config/home/kitty";
+  home.file.".config/kitty/kitty.conf".source = 
+    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/projects/nixos-config/home/kitty/kitty.conf";
   home.file.".config/niri/config.kdl".source = 
     config.lib.file.mkOutOfStoreSymlink "/home/rintaro/projects/nixos-config/home/niri/config.kdl";
   home.file.".config/nvim".source = 
     config.lib.file.mkOutOfStoreSymlink "/home/rintaro/projects/nixos-config/home/nvim";
   home.file.".config/tmux".source = 
     config.lib.file.mkOutOfStoreSymlink "/home/rintaro/projects/nixos-config/home/tmux";
-  home.file.".config/vicinae".source = 
-    config.lib.file.mkOutOfStoreSymlink "/home/rintaro/projects/nixos-config/home/vicinae";
 
   programs.noctalia.enable = true;
   programs.zen-browser.enable = true;
